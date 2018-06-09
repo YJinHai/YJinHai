@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[Hexo之NexT主题 icon一直显示默认样式]]></title>
     <url>%2F2018%2F06%2F09%2Fnext%E4%B9%8Bicon%2F</url>
-    <content type="text"><![CDATA[今天配置了一下午的next主题，也遇到了一些问题，主要还是官方教程和网上的教程贴都是按照以前的next版本的，印象深刻的就是icon。无论网上还是官方文档有关于icon的图标设置都差不多如下12345678 GitHub: https://github.com/yourname 邮箱: mailto:test@gamil.comsocial_icons: enable: true icons_only: false transition: false GitHub: github 邮箱: envelope 但在最新的next中这样配置会变成这样子：并且如果 icons_only: true 的话也会变成这样正确配置123456 GitHub: https://github.com/yourname || github 邮箱: mailto:test@gamil.com || envelopesocial_icons: enable: true icons_only: false transition: false 我还是在网上查找后才解决，这次附上了图。其实==主题配置文件== _config.yml已经有注释的了，但新手刚刚接触的话可能直接按照官方或者网上教程来，而忽视了注释。嗯。。。hexo的上传图片也是个不太舒服的操作。]]></content>
+    <content type="text"><![CDATA[今天配置了一下午的next主题，也遇到了一些问题，主要还是官方教程和网上的教程贴都是按照以前的next版本的，印象深刻的就是icon。无论网上还是官方文档有关于icon的图标设置都差不多如下12345678 GitHub: https://github.com/yourname 邮箱: mailto:test@gamil.comsocial_icons: enable: true icons_only: false transition: false GitHub: github 邮箱: envelope 但在最新的next中这样配置会变成这样子：并且如果 icons_only: true 的话也会变成这样正确配置123456 GitHub: https://github.com/yourname || github 邮箱: mailto:test@gamil.com || envelopesocial_icons: enable: true icons_only: false transition: false 我还是在网上查找后才解决，这次附上了图。其实主题配置文件_config.yml已经有注释的了，但新手刚刚接触的话可能直接按照官方或者网上教程来，而忽视了注释。嗯。。。hexo的上传图片也是个不太舒服的操作。]]></content>
       <categories>
         <category>Hexo</category>
       </categories>
