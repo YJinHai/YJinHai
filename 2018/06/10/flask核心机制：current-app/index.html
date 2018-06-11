@@ -89,7 +89,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180610215954276?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180610191854274?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180610192248712?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-06-11T09:30:39.484Z">
+<meta property="og:updated_time" content="2018-06-11T09:40:16.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flask核心机制：current_app">
 <meta name="twitter:description" content="加深了对于Flask中current_app的理解，弥补了Miguel Grinberg的教程略过的知识点。">
@@ -426,8 +426,14 @@
 <p><strong>运行：</strong><br><img src="https://img-blog.csdn.net/201806102141266?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 <h1 id="AppContext、RequestContext、Flask与Request之间的关系"><a href="#AppContext、RequestContext、Flask与Request之间的关系" class="headerlink" title="AppContext、RequestContext、Flask与Request之间的关系"></a>AppContext、RequestContext、Flask与Request之间的关系</h1><p><strong>AppContext:</strong></p>
 <ul>
-<li>应用上下文，是对flask一切对象的封装<br><strong>RequestContext:</strong></li>
-<li>请求上下文，是对request请求对象的封装<br><strong>current_app:</strong></li>
+<li>应用上下文，是对flask一切对象的封装</li>
+</ul>
+<p><strong>RequestContext:</strong></p>
+<ul>
+<li>请求上下文，是对request请求对象的封装</li>
+</ul>
+<p><strong>current_app:</strong></p>
+<ul>
 <li>类型是LocalProxy</li>
 <li>像全局变量一样工作，但只能在处理请求期间且在处理它的线程中访问</li>
 <li>返回的栈顶元素不是应用上下文，而是flask的应用实例对象</li>
