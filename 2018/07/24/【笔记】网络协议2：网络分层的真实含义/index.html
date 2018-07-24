@@ -72,6 +72,8 @@
 
 
 
+  <link rel="alternate" href="/atom.xml" title="The program life" type="application/atom+xml" />
+
 
 
 
@@ -86,7 +88,7 @@
 <meta property="og:description" content="网络为什么分层？因为是个复杂的程序都要分层，这是程序设计的要求, 涉及到架构和设计模式的问题，分层是各个模块业务逻辑的职责划分。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/20180724181548535?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-24T10:26:56.146Z">
+<meta property="og:updated_time" content="2018-07-24T10:32:15.016Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【笔记】网络协议2：网络分层的真实含义">
 <meta name="twitter:description" content="网络为什么分层？因为是个复杂的程序都要分层，这是程序设计的要求, 涉及到架构和设计模式的问题，分层是各个模块业务逻辑的职责划分。">
@@ -445,7 +447,7 @@
 <li>判断地址是TCP还是UDP进行不同的逻辑处理。假设这个地址是 TCP<br>的，则会调用process_tcp(buffer)。这时候，Buffer<br>里面没有三层的头，就需要查看四层的头，看这是一个发起，还是一个应答，又或者是一个正常的数据包，然后分别由不同的逻辑进行处理。如果是发起或者应答，接下来可能要发送一个回复包；如果是一个正常的数据包，就需要交给上层了。判断哪个应用处理，在四层的头里面有端口号，不同的应用监听不同的端口号。</li>
 <li>浏览器解析HTML，显示页面。</li>
 </ol>
-<h2 id="TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢"><a href="#TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢" class="headerlink" title="TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?"></a>TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?</h2><p><strong>TCP 发送每一个消息，都会带着 IP 层和 MAC 层了。</strong><br>因为，TCP 每发送一个消息，IP 层和 MAC 层的所有机制都要运行一遍。记住：只要是在网络上跑的包，都是完整的。可以有下层没上层，绝对不可能有上层没下层。  所以，对 TCP 协议来说，三次握手也好，重试也好，只要想发出去包，就要有 IP 层和 MAC 层，不然是发不出去的。<br><strong>如同跨越没有天桥的双子楼，从A栋的4楼跑去B栋的4楼都需要经过下楼、上楼的步骤，把4楼以下的楼层跑一次。</strong></p>
+<h2 id="TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢"><a href="#TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢" class="headerlink" title="TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?"></a>TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?</h2><p><strong>TCP 发送每一个消息，都会带着 IP 层和 MAC 层了。</strong><br>因为，TCP 每发送一个消息，IP 层和 MAC 层的所有机制都要运行一遍。<br><strong>记住</strong>：只要是在网络上跑的包，都是完整的。可以有下层没上层，绝对不可能有上层没下层。<br>所以，对 TCP 协议来说，三次握手也好，重试也好，只要想发出去包，就要有 IP 层和 MAC 层，不然是发不出去的。<br><strong>如同跨越没有天桥的双子楼，从A栋的4楼跑去B栋的4楼都需要经过下楼、上楼的步骤，把4楼以下的楼层跑一次。</strong></p>
 
       
     </div>
@@ -598,6 +600,13 @@
 
           </nav>
 
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
           
 
           
