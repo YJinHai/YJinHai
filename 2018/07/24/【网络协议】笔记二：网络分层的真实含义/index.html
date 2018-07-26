@@ -82,15 +82,15 @@
 <meta name="description" content="网络为什么分层？因为是个复杂的程序都要分层，这是程序设计的要求, 涉及到架构和设计模式的问题，分层是各个模块业务逻辑的职责划分。">
 <meta name="keywords" content="网络协议">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【笔记】网络协议2：网络分层的真实含义">
-<meta property="og:url" content="http://yoursite.com/2018/07/24/【笔记】网络协议2：网络分层的真实含义/index.html">
+<meta property="og:title" content="【网络协议】笔记二 | 网络分层的真实含义">
+<meta property="og:url" content="http://yoursite.com/2018/07/24/【网络协议】笔记二：网络分层的真实含义/index.html">
 <meta property="og:site_name" content="The program life">
 <meta property="og:description" content="网络为什么分层？因为是个复杂的程序都要分层，这是程序设计的要求, 涉及到架构和设计模式的问题，分层是各个模块业务逻辑的职责划分。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://img-blog.csdn.net/20180724181548535?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-24T10:32:15.016Z">
+<meta property="og:updated_time" content="2018-07-26T14:54:10.878Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【笔记】网络协议2：网络分层的真实含义">
+<meta name="twitter:title" content="【网络协议】笔记二 | 网络分层的真实含义">
 <meta name="twitter:description" content="网络为什么分层？因为是个复杂的程序都要分层，这是程序设计的要求, 涉及到架构和设计模式的问题，分层是各个模块业务逻辑的职责划分。">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20180724181548535?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/24/【笔记】网络协议2：网络分层的真实含义/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/24/【网络协议】笔记二：网络分层的真实含义/"/>
 
 
 
 
 
-  <title>【笔记】网络协议2：网络分层的真实含义 | The program life</title>
+  <title>【网络协议】笔记二 | 网络分层的真实含义 | The program life</title>
   
 
 
@@ -318,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/【笔记】网络协议2：网络分层的真实含义/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/【网络协议】笔记二：网络分层的真实含义/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="淡然">
@@ -335,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【笔记】网络协议2：网络分层的真实含义</h1>
+          <h1 class="post-title" itemprop="name headline">【网络协议】笔记二 | 网络分层的真实含义</h1>
         
 
         <div class="post-meta">
@@ -388,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/24/【笔记】网络协议2：网络分层的真实含义/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/24/【笔记】网络协议2：网络分层的真实含义/" itemprop="commentCount"></span>
+                <a href="/2018/07/24/【网络协议】笔记二：网络分层的真实含义/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/24/【网络协议】笔记二：网络分层的真实含义/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -397,7 +397,7 @@
 
           
           
-             <span id="/2018/07/24/【笔记】网络协议2：网络分层的真实含义/" class="leancloud_visitors" data-flag-title="【笔记】网络协议2：网络分层的真实含义">
+             <span id="/2018/07/24/【网络协议】笔记二：网络分层的真实含义/" class="leancloud_visitors" data-flag-title="【网络协议】笔记二 | 网络分层的真实含义">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -448,6 +448,14 @@
 <li>浏览器解析HTML，显示页面。</li>
 </ol>
 <h2 id="TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢"><a href="#TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢" class="headerlink" title="TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?"></a>TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?</h2><p><strong>TCP 发送每一个消息，都会带着 IP 层和 MAC 层了。</strong><br>因为，TCP 每发送一个消息，IP 层和 MAC 层的所有机制都要运行一遍。<br><strong>记住</strong>：只要是在网络上跑的包，都是完整的。可以有下层没上层，绝对不可能有上层没下层。<br>所以，对 TCP 协议来说，三次握手也好，重试也好，只要想发出去包，就要有 IP 层和 MAC 层，不然是发不出去的。<br><strong>如同跨越没有天桥的双子楼，从A栋的4楼跑去B栋的4楼都需要经过下楼、上楼的步骤，把4楼以下的楼层跑一次。</strong></p>
+<h2 id="知识复盘"><a href="#知识复盘" class="headerlink" title="知识复盘"></a>知识复盘</h2><h1 id="网络为什么要分层？"><a href="#网络为什么要分层？" class="headerlink" title="网络为什么要分层？"></a>网络为什么要分层？</h1><p>太复杂</p>
+<h1 id="处理网络数据包的程序是如何工作的？-1"><a href="#处理网络数据包的程序是如何工作的？-1" class="headerlink" title="处理网络数据包的程序是如何工作的？"></a>处理网络数据包的程序是如何工作的？</h1><p>像个没有天桥的双子楼，到达服务器就要先封包下楼再拆包上楼</p>
+<h1 id="TCP在三次握手的时候，IP层和MAC层在做什么？"><a href="#TCP在三次握手的时候，IP层和MAC层在做什么？" class="headerlink" title="TCP在三次握手的时候，IP层和MAC层在做什么？"></a>TCP在三次握手的时候，IP层和MAC层在做什么？</h1><p>IP层和MAC层所有机制都要运行一遍，封包下楼、拆包上楼</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li>网络程序分层处理，下楼封包、上楼拆包</li>
+<li>MAC地址对上就上楼，IP地址不对就从楼中丢出去</li>
+<li>楼层（TCP）与对面楼层之间不能飞跃而过，该怎么走就怎么走</li>
+</ul>
 
       
     </div>
@@ -478,8 +486,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/23/【笔记】网络协议1：为什么要学习网络协议？/" rel="next" title="【笔记】网络协议1：为什么要学习网络协议？">
-                <i class="fa fa-chevron-left"></i> 【笔记】网络协议1：为什么要学习网络协议？
+              <a href="/2018/07/23/【网络协议】笔记一：为什么要学习网络协议？/" rel="next" title="【网络协议】笔记一 | 为什么要学习网络协议？">
+                <i class="fa fa-chevron-left"></i> 【网络协议】笔记一 | 为什么要学习网络协议？
               </a>
             
           </div>
@@ -487,6 +495,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/26/【网络协议】笔记三：ifconfig：最熟悉又陌生的命令行/" rel="prev" title="【网络协议】笔记三 | ifconfig：最熟悉又陌生的命令行">
+                【网络协议】笔记三 | ifconfig：最熟悉又陌生的命令行 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -570,7 +582,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -666,7 +678,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络为什么分层？"><span class="nav-number">1.</span> <span class="nav-text">网络为什么分层？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理网络数据包的程序是如何工作的？"><span class="nav-number">2.</span> <span class="nav-text">处理网络数据包的程序是如何工作的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢"><span class="nav-number">3.</span> <span class="nav-text">TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#网络为什么分层？"><span class="nav-number">1.</span> <span class="nav-text">网络为什么分层？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#处理网络数据包的程序是如何工作的？"><span class="nav-number">2.</span> <span class="nav-text">处理网络数据包的程序是如何工作的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TCP-在三次握手的时候，IP-层和-MAC-层在做什么呢"><span class="nav-number">3.</span> <span class="nav-text">TCP 在三次握手的时候，IP 层和 MAC 层在做什么呢?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#知识复盘"><span class="nav-number">4.</span> <span class="nav-text">知识复盘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络为什么要分层？"><span class="nav-number"></span> <span class="nav-text">网络为什么要分层？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#处理网络数据包的程序是如何工作的？-1"><span class="nav-number"></span> <span class="nav-text">处理网络数据包的程序是如何工作的？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TCP在三次握手的时候，IP层和MAC层在做什么？"><span class="nav-number"></span> <span class="nav-text">TCP在三次握手的时候，IP层和MAC层在做什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
@@ -719,7 +731,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共8.7k字</span>
+  <span class="post-count">博客全站共12.4k字</span>
 </div>
 
         
