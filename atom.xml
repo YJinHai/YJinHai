@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itfriends.xyz/"/>
-  <updated>2018-07-30T13:27:51.266Z</updated>
+  <updated>2018-07-30T16:57:42.345Z</updated>
   <id>http://itfriends.xyz/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【架构】笔记二 | 架构设计的目的</title>
+    <link href="http://itfriends.xyz/2018/07/31/%E3%80%90%E6%9E%B6%E6%9E%84%E3%80%91%E7%AC%94%E8%AE%B0%E4%BA%8C-%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E7%9A%84%E7%9B%AE%E7%9A%84/"/>
+    <id>http://itfriends.xyz/2018/07/31/【架构】笔记二-架构设计的目的/</id>
+    <published>2018-07-30T16:56:21.000Z</published>
+    <updated>2018-07-30T16:57:42.345Z</updated>
+    
+    <content type="html"><![CDATA[<p>为了收益最大化</p><a id="more"></a><h1 id="核心内容"><a href="#核心内容" class="headerlink" title="核心内容"></a>核心内容</h1><ul><li>架构设计的核心是分析复杂度</li><li>架构即是收益决策</li></ul><p>首先要明白的是，<strong>架构就是一种设计，一种设计思想</strong>。</p><h1 id="架构设计常见误区"><a href="#架构设计常见误区" class="headerlink" title="架构设计常见误区"></a>架构设计常见误区</h1><p><strong>因为框架很重要，所以要做框架设计</strong>-》正确的废话</p><ul><li>不做框架设计系统就跑不起来么？ 不然</li><li>做了框架设计就能提高开发效率么？ 不尽然</li><li>设计良好的架构能促进业务发展么？ 不好说</li></ul><p><strong>不是每个系统都要做框架设计吗</strong>-》知其然不知其所以然<br><strong>公司流程要求系统开发过程中必须有架构设计</strong>-》舍本逐末<br><strong>为了高性能、高可用、可扩展，所以要做框架设计</strong>-》画蛇添足</p><h1 id="架构设计的真正目的"><a href="#架构设计的真正目的" class="headerlink" title="架构设计的真正目的"></a>架构设计的真正目的</h1><p>架构也是为了应对软件系统复杂度而提出的一个解决方案，通过回顾架构产生的历史背景和原因，我们可以基本推导出答案：<strong>架构设计的主要目的是为了解决软件系统复杂度带来的问题</strong>。</p><p>明确了“<strong>架构设计是为了解决软件复杂度</strong>”原则后，很多架构上的困惑都可以很好回答。</p><p><strong>“这么多需求，从哪里开始下手进行架构设计呢？”</strong></p><ul><li>——通过熟悉和理解需求，识别系统复杂性所在的地方，然后针对这些复杂点进行架构设计。</li></ul><p><strong>“架构设计要考虑高性能、高可用、高扩展……这么多高 XX，全部设计完成估计要 1 个月，但老大只给了 1 周时间”</strong></p><ul><li>——架构设计并不是要面面俱到，不需要每个架构都具备高性能、高可用、高扩展等特点，而是要识别出复杂点然后有针对性地解决问题。</li></ul><p><strong>“业界 A 公司的架构是 X，B 公司的方案是 Y，两个差别比较大，该参考哪一个呢？”</strong></p><ul><li>——理解每个架构方案背后所需要解决的复杂点，然后才能对比自己的业务复杂点，参考复杂点相似的方案。</li></ul><p><strong>分析复杂度</strong><br><strong>分析复杂度</strong><br><strong>分析复杂度</strong></p><p><strong>当我们对任何一个系统无论是进行架构设计还是更改的时候，首先应识别其复杂度到底体现在哪里</strong></p><p>基于系统业务应用场景分析复杂度，分析复杂度是为了跟系统业务应用场景相贴合。</p><h1 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h1><p>比如要搭建一个“学生管理系统”，分析复杂度</p><ul><li><strong>性能</strong>：学校学生人数不多，访问频率不高，存储用 MySQL 完全能够胜任，缓存都可以不用，Web 服务器用 Nginx 绰绰有余。</li><li><strong>可扩展性</strong>：学生管理系统的功能比较稳定，可扩展的空间并不大，因此可扩展性也不复杂。</li><li><strong>高可用</strong>：学生管理系统即使宕机 2 小时，对学生管理工作影响并不大，因此可以不做负载均衡，更不用考虑异地多活这类复杂的方案了。但是，如果学生的数据全部丢失，修复是非常麻烦的，只能靠人工逐条修复，这个很难接受，因此需要考虑存储高可靠，这里就有点复杂了。我们需要考虑多种异常情况：机器故障、机房故障，针对机器故障，我们需要设计<br>MySQL 同机房主备方案；针对机房故障，我们需要设计 MySQL 跨机房同步方案。</li><li><strong>安全性</strong>：学生管理系统存储的信息有一定的隐私性，例如学生的家庭情况，但并不是和金融相关的，也不包含强隐私（例如玉照、情感）的信息，因此安全性方面只要做<br>3 个事情就基本满足要求了：Nginx 提供 ACL 控制、用户账号密码管理、数据库访问权限控制。</li><li><strong>成本</strong>：由于系统很简单，基本上几台服务器就能够搞定，对于一所大学来说完全不是问题，可以无需太多关注。</li></ul><p>对应架构如下:<br><img src="https://img-blog.csdn.net/20180730234909661?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p><p>“<strong>复杂度</strong>”可以简单理解成“<strong>成本</strong>”,“<strong>复杂度带来的问题</strong>”就是“<strong>成本收益难度</strong>”，而“<strong>分析复杂度</strong>”就是“<strong>成本收益分析</strong>”，也就是说架构设计的目的是为了“<strong>收益最大化</strong>”</p><h1 id="架构设计过程"><a href="#架构设计过程" class="headerlink" title="架构设计过程"></a>架构设计过程</h1><p><strong>架构即决策</strong>，收益决策<br><strong>明确需求</strong>-&gt;<strong>分析复杂度</strong>-&gt;<strong>做出决策</strong>。</p><h1 id="知识复盘"><a href="#知识复盘" class="headerlink" title="知识复盘"></a>知识复盘</h1><h2 id="架构设计核心是什么？"><a href="#架构设计核心是什么？" class="headerlink" title="架构设计核心是什么？"></a>架构设计核心是什么？</h2><p>分析复杂度（成本收益分析）</p><h2 id="架构设计的目的是什么？"><a href="#架构设计的目的是什么？" class="headerlink" title="架构设计的目的是什么？"></a>架构设计的目的是什么？</h2><p>解决复杂度的问题（成本收益难度）</p><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul><li>架构设计是为了解决软件复杂度</li><li>优秀的架构设计能更好地收益最大化</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;为了收益最大化&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="架构" scheme="http://itfriends.xyz/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="架构" scheme="http://itfriends.xyz/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>【网络协议】笔记六 | 交换机与VLAN</title>
