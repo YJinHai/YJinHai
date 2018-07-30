@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itfriends.xyz/"/>
-  <updated>2018-07-29T02:53:33.521Z</updated>
+  <updated>2018-07-30T13:27:51.266Z</updated>
   <id>http://itfriends.xyz/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【网络协议】笔记六 | 交换机与VLAN</title>
+    <link href="http://itfriends.xyz/2018/07/30/%E3%80%90%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE%E3%80%91%E7%AC%94%E8%AE%B0%E5%85%AD-%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B8%8EVLAN/"/>
+    <id>http://itfriends.xyz/2018/07/30/【网络协议】笔记六-交换机与VLAN/</id>
+    <published>2018-07-30T13:25:28.000Z</published>
+    <updated>2018-07-30T13:27:51.266Z</updated>
+    
+    <content type="html"><![CDATA[<p>暂时还没有完全理解，笔记逻辑存在一些BUG</p><a id="more"></a><h1 id="核心知识点"><a href="#核心知识点" class="headerlink" title="核心知识点"></a>核心知识点</h1><ul><li>STP协议解决交换机环路问题</li><li>理解STR协议</li><li>使用VLAN解决广播域冲突</li></ul><p>宿舍使用一台交换机就完全没有问题了，但要是写字楼办公室的可以就需要多台交换机了。多台交换机连接起来，就形成稍微复杂的<a href="https://www.baidu.com/link?url=-rhoZtuBlnJJd17px1T5rCWQp_2wV50xqkgc59spWbWAVP9AO2BtfxLAHjzgaOX8ece-el-Z5imdzwBl05aEfbTdF3Fer3mUTXJgFInQxW8eMmiRqCMMjzYhZ5fKQskk&amp;wd=&amp;eqid=af5b1b160001979a000000065b5f014c" target="_blank" rel="noopener">拓扑结构</a>。</p><h1 id="拓扑结构的形成"><a href="#拓扑结构的形成" class="headerlink" title="拓扑结构的形成"></a>拓扑结构的形成</h1><p><img src="https://img-blog.csdn.net/2018073020163062?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p><ul><li>两台交换机</li><li>机器1只知道机器4的IP地址，还需要机器4的MAC地址才能把包送到机器4</li><li>机器1发起广播，没机器2的事</li><li>交换机A收到，转发给出了来源处的其他网口</li><li>机器3收到，也没机器3的事</li><li>交换机B连着局域网LAN2，所以交换机B也收到，也继续广播</li><li>机器4和机器5收到，机器4响应MAC地址</li><li>ARP请求成功</li></ul><p><strong>机器的链路层能够学习，交换机也能够学习</strong></p><ul><li>机器A当经过一次交换机A，那么交换机A以后都知道机器A是在左边局域网LAN1</li></ul><p>机器多了，多台交换机就有可能连接着相同的两个LAN，就回形成环路</p><h1 id="解决常见的环路问题"><a href="#解决常见的环路问题" class="headerlink" title="解决常见的环路问题"></a>解决常见的环路问题</h1><p><img src="https://img-blog.csdn.net/20180730201823879?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""> </p><ul><li>机器1需要访问机器2</li><li>交换机A此时还没有学习，并不知道A是在LAN1还是LAN2于是，广播到LAN2</li><li>LAN2存在着这个广播包，于是交换机B从右边接受到LAN2过来的广播包，广播到LAN1</li><li>交换机A此时还是不知道机器2在哪，于是再次广播到LAN2</li><li>不断重复3、4步骤</li></ul><p>一开始交换机A和B都接受到左边LAN1中机器1的广播包，学习到机器1是在左边的LAN1中。</p><p>但当交换机AB把该广播包广播到右边LAN2时，A接受到来自B的广播包，B也接受到来自A的广播包，不断循环。</p><p>其他机器也继续发着广播包，通信链路越来越堵，最后走不动。</p><p>于是就产生了死循环的环路问题。</p><p>于是应用了STP协议</p><h1 id="理解STP协议"><a href="#理解STP协议" class="headerlink" title="理解STP协议"></a>理解STP协议</h1><p>在数据结构中，有一个方法叫作<strong>最小生成树</strong>。有环的我们常称为图。将图中的环破了，就生成了树。在计算机网络中，生成树的算法叫作<strong>STP</strong>，全称<strong>Spanning Tree Protocol</strong>。</p><p>应用了STP协议的办公室交换机结构图<br> <img src="https://img-blog.csdn.net/20180730202013862?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br><strong>概念</strong>：</p><ul><li>Root Bridge-根交换机</li><li>Designate Bridges-子交换机</li><li>Bridge Protocol Data Units（BPDU）-网桥协议数据单位元</li><li>Priority Vector – 优先级向量</li></ul><h2 id="BPDU介绍"><a href="#BPDU介绍" class="headerlink" title="BPDU介绍"></a>BPDU介绍</h2><ol><li>BPDU是交换机之间发送的用于构建无环路拓扑的消息称为网桥协议数据单元</li><li>BPDU是二层报文</li><li>BPDU中包括用于计算生成树的参数信息 </li></ol><p><img src="https://img-blog.csdn.net/20180730202236111?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p><ul><li>Root Bridge ID （BID）—本交换机认为的根交换机ID</li><li>Root Path Cost —本交换机认为的根交换机路径开销</li><li>Bridge ID —本交换机的ID</li><li>Port ID—发送该BPDU的端口ID</li></ul><p><strong>也就是说BPDU代表两交换机连接的连接与开销</strong></p><h1 id="STR协议过程"><a href="#STR协议过程" class="headerlink" title="STR协议过程"></a>STR协议过程</h1><p> <img src="https://img-blog.csdn.net/20180730202420949?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br><strong>哪个数字最小就是根交换机</strong><br><strong>其他交换机哪条通往根交换机最短的路就是交换机转发广播包的路径</strong><br>最终转发路径如下<br> <img src="https://img-blog.csdn.net/20180730202505239?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>原本1-5-6是一个环，确定好最短通信路径，这个环通信就不成环了</p><ul><li>5要是需要转发到1就，5-&gt;6-&gt;1</li><li>1要是需要转发到5就，1-&gt;6&gt;5</li></ul><h1 id="解决广播问题和安全问题"><a href="#解决广播问题和安全问题" class="headerlink" title="解决广播问题和安全问题"></a>解决广播问题和安全问题</h1><p><strong>机器多了，交换机多了，就需要划分广播域来更方便管理了</strong><br>两种划分方法<br>物理隔离：<br>配置单的独交换机，单独的子网，通过路由器（另讲）向其他广播域沟通<br>虚拟隔离：<br>VLAN，虚拟局域网。<br><img src="https://img-blog.csdn.net/20180730202801310?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p><p><img src="https://img-blog.csdn.net/2018073020281655?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p><p>如果交换机是支持VLAN的，可以设置交换机每个端口所属的VLAN，交换机会把广播包的二层头取下来，识别VLAN ID，广播包的转发只在相同的端口 VLAN ID中进行。</p><p>端口会根据所属VLAN ID在广播包二层头中加一个TAG再转发出去。</p><p>Tag里面有一个端口 VLAN ID，一共 12 位，可以划分4096个VLAN。用以确定那个相同VLAN ID端口接受。</p><p>具体可以参考以下链接内容：<br><a href="https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/419962?fromtitle=VLAN&amp;fromid=320429&amp;fr=aladdin" target="_blank" rel="noopener">https://baike.baidu.com/item/%E8%99%9A%E6%8B%9F%E5%B1%80%E5%9F%9F%E7%BD%91/419962?fromtitle=VLAN&amp;fromid=320429&amp;fr=aladdin</a><br><a href="http://network.51cto.com/art/201409/450885.htm" target="_blank" rel="noopener">http://network.51cto.com/art/201409/450885.htm</a></p><p>交换机之间通过叫做Trunk口来进行连接，用来转发属于任何VLAN的口。<br>这里介绍的是一般复杂的的场景，还有云计算其他的另说。</p><h1 id="知识复盘"><a href="#知识复盘" class="headerlink" title="知识复盘"></a>知识复盘</h1><h2 id="如何解决交换机环路问题？"><a href="#如何解决交换机环路问题？" class="headerlink" title="如何解决交换机环路问题？"></a>如何解决交换机环路问题？</h2><p>应用STP协议</p><h2 id="如何划分广播域？"><a href="#如何划分广播域？" class="headerlink" title="如何划分广播域？"></a>如何划分广播域？</h2><p>物理隔离或者虚拟隔离VLAN，一般使用虚拟隔离</p><h1 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h1><h2 id="STP协议有什么缺点？"><a href="#STP协议有什么缺点？" class="headerlink" title="STP协议有什么缺点？"></a>STP协议有什么缺点？</h2><ol><li><strong>拓扑收敛慢</strong>，当网络拓扑发生改变的时候，生成树协议需要50-52秒的时间才能完成拓扑收敛，数越大需要的时间越长，这期间就是网络中断。</li><li><strong>不能提供负载均衡的功能</strong>。当网络中出现环路的时候，生成树协议简单的将环路进行Block，这样该链路就不能进行数据包的转发，浪费网络资源。</li></ol><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul><li>当交换机的数目越来越多的时候，会遭遇<strong>环路问题</strong>，让网络包迷路造成<a href="https://baike.baidu.com/item/%E5%B9%BF%E6%92%AD%E9%A3%8E%E6%9A%B4/3574878?fr=aladdin" target="_blank" rel="noopener">广播风暴</a>，这就需要使用 STP 协议，将有环路的图变成没有环路的树，从而解决环路问题。</li><li>交换机数目多会面临隔离问题，可以通过 VLAN 形成虚拟局域网，从而解决广播问题和安全问题。</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;暂时还没有完全理解，笔记逻辑存在一些BUG&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络协议" scheme="http://itfriends.xyz/categories/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+    
+      <category term="网络协议" scheme="http://itfriends.xyz/tags/%E7%BD%91%E7%BB%9C%E5%8D%8F%E8%AE%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>【架构】笔记一 |  初识框架与架构</title>
