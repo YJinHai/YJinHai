@@ -92,7 +92,7 @@
 <meta property="og:image" content="https://img-blog.csdn.net/20180610191854274?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180610192248712?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 <meta property="og:image" content="https://img-blog.csdn.net/20180729123834612?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-08-03T09:46:09.585Z">
+<meta property="og:updated_time" content="2018-08-03T10:55:42.980Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="【Flask】flask核心机制：current_app">
 <meta name="twitter:description" content="加深了对于Flask中current_app的理解，弥补了Miguel Grinberg的教程略过的知识点。">
@@ -436,7 +436,9 @@
 <p>原文地址:<a href="http://itfriends.xyz/2018/06/10/flask%E6%A0%B8%E5%BF%83%E6%9C%BA%E5%88%B6%EF%BC%9Acurrent-app/#more">Flask核心机制：current_app</a></p>
 <h1 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h1><ul>
 <li>AppContext手动、自动入栈</li>
-<li>current_app是线程、协程隔离</li>
+<li>LocalStack是线程隔离的栈结构</li>
+<li>current_app是线程、协程隔离对象</li>
+<li>LocalProxy是获取当前线程隔离的代理对象</li>
 </ul>
 <h1 id="flask中经典错误-working-outside-application-context"><a href="#flask中经典错误-working-outside-application-context" class="headerlink" title="flask中经典错误 working outside application context"></a>flask中经典错误 working outside application context</h1><p><strong>错误：</strong><br>working outside application contex<br><strong>原因：</strong><br>在没有获取到应用上下文的情况下，进行了上下文操作。<br><strong>代码：</strong></p>
 <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">from flask import Flask, current_app</span><br><span class="line"></span><br><span class="line">app = Flask(__name__)</span><br><span class="line"></span><br><span class="line">a = current_app</span><br><span class="line">d = current_app.config['DEBUG']</span><br></pre></td></tr></table></figure>
@@ -783,7 +785,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共19.3k字</span>
+  <span class="post-count">博客全站共19.4k字</span>
 </div>
 
         
