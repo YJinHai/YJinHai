@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itfriends.xyz/"/>
-  <updated>2018-07-30T16:57:42.345Z</updated>
+  <updated>2018-08-07T00:55:10.049Z</updated>
   <id>http://itfriends.xyz/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【进阶攻略】初惑:技术方向的选择</title>
+    <link href="http://itfriends.xyz/2018/08/07/%E3%80%90%E8%BF%9B%E9%98%B6%E6%94%BB%E7%95%A5%E3%80%91%E5%88%9D%E6%83%91-%E6%8A%80%E6%9C%AF%E6%96%B9%E5%90%91%E7%9A%84%E9%80%89%E6%8B%A9/"/>
+    <id>http://itfriends.xyz/2018/08/07/【进阶攻略】初惑-技术方向的选择/</id>
+    <published>2018-08-06T16:29:17.000Z</published>
+    <updated>2018-08-07T00:55:10.049Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="选择语言"><a href="#选择语言" class="headerlink" title="选择语言"></a>选择语言</h1><p><strong>选择技术方向，从某种意义上讲就是选择语言。</strong></p><ul><li>“语言不重要，必要的时候可以在各种语言之间切换”的前提是对一门语言掌握通透才能触类旁通。</li><li>掌握通透，不但需要掌握语言本身，还需要熟悉语言背后的整个生态圈。</li><li>掌握生态圈需要耗费大量的时间，而生态圈也一直在扩展。</li><li>选择展示蓬勃生命的语言，比如当下的python、Go。</li></ul><h1 id="选择回报"><a href="#选择回报" class="headerlink" title="选择回报"></a>选择回报</h1><p><strong>选择技术方向，选择语言，本质都是一种投资。</strong></p><ul><li>焦虑在于技术更新快速，而之前付出时间获得的成果被淘汰。</li><li>越年轻的语言和方向，风险越高。</li><li>高风险未必带来高回报。</li><li>选择确定性的回报，要比抱着赌一把的心态更可取</li><li>看看当前的市场需求是什么，最需要什么，以及长期需要什么，再看看自己的基础能否翻越门槛。</li><li>技术总是短期被高估，但长期被低估。</li><li>技术的选择，都是赚取长期回报，短期的波动放在长期来看终将被抵。</li></ul><p>.</p><h1 id="选择行业"><a href="#选择行业" class="headerlink" title="选择行业"></a>选择行业</h1><p><strong>搞清楚了语言、技术方向和回报的关系后，最后做出选择的立足点通常会落在行业上。</strong><br>一个问题就像一把锁，开锁的钥匙肯定不会在锁上。</p><p>选语言，就是选职业，而选职业首先选行业。</p><ul><li>自己想从事哪个行业的软件开发？</li><li>这个行业的现状如何？</li><li>行业的平均增速如何？</li><li>和其他行业相比如何？</li><li>这个行业里最好的公司相比行业平均增速又如何？</li><li>这些最好的公司都用些什么样的技术栈和语言？</li><li>想进入这样的公司，就选择学这样的技术和语言。</li></ul><h1 id="关于选择"><a href="#关于选择" class="headerlink" title="关于选择"></a>关于选择</h1><p><strong>选择的前提是为了获得安身立命的本领，获得竞争的相对优势。</strong></p><ul><li>一旦把兴趣变成了职业也就失去了兴趣，职业里面还有很多“不好玩”。</li><li>学习编程的一部分是学习语言的语法结构，更多的是学习如何像一个工程师一样解决问题。</li><li>有时选择困难，是因为缺乏足够的信息做出最优解。</li><li>无法获得决策所需的所有信息时，不要追求最优决策，而要追求满意决策。</li></ul><p><strong>停留在原地纠结，什么也不会改变。</strong></p><p>————————————————————————<br>笔记来源：<br><img src="https://img-blog.csdn.net/20180807011209248?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;选择语言&quot;&gt;&lt;a href=&quot;#选择语言&quot; class=&quot;headerlink&quot; title=&quot;选择语言&quot;&gt;&lt;/a&gt;选择语言&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;选择技术方向，从某种意义上讲就是选择语言。&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;“语言不重要，必要的
+      
+    
+    </summary>
+    
+      <category term="程序人生" scheme="http://itfriends.xyz/categories/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
+    
+    
+      <category term="程序人生" scheme="http://itfriends.xyz/tags/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>【架构】笔记二 | 架构设计的目的</title>
