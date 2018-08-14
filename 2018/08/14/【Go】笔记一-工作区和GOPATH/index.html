@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="网络协议," />
+  <meta name="keywords" content="Go," />
 
 
 
@@ -79,25 +79,20 @@
 
 
 
-<meta name="description" content="租来的">
-<meta name="keywords" content="网络协议">
+<meta name="description" content="工作区和 GOPATH 的概念和含义是每个 Go 工程师都需了解的。">
+<meta name="keywords" content="Go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【网络协议】笔记四 | DHCP与PXE：IP是怎么来的，又是怎么没的？">
-<meta property="og:url" content="http://itfriends.xyz/2018/07/27/【网络协议】笔记四：DHCP与PXE：IP是怎么来的，又是怎么没的？/index.html">
+<meta property="og:title" content="【Go】笔记一 | 工作区和GOPATH">
+<meta property="og:url" content="http://itfriends.xyz/2018/08/14/【Go】笔记一-工作区和GOPATH/index.html">
 <meta property="og:site_name" content="The program life">
-<meta property="og:description" content="租来的">
+<meta property="og:description" content="工作区和 GOPATH 的概念和含义是每个 Go 工程师都需了解的。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/20180727223550105?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180727224012462?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180727224031166?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180727224057177?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180727224113472?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180727223937827?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-27T14:58:06.117Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20180814154640934?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-08-14T07:50:55.826Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【网络协议】笔记四 | DHCP与PXE：IP是怎么来的，又是怎么没的？">
-<meta name="twitter:description" content="租来的">
-<meta name="twitter:image" content="https://img-blog.csdn.net/20180727223550105?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="【Go】笔记一 | 工作区和GOPATH">
+<meta name="twitter:description" content="工作区和 GOPATH 的概念和含义是每个 Go 工程师都需了解的。">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180814154640934?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -127,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://itfriends.xyz/2018/07/27/【网络协议】笔记四：DHCP与PXE：IP是怎么来的，又是怎么没的？/"/>
+  <link rel="canonical" href="http://itfriends.xyz/2018/08/14/【Go】笔记一-工作区和GOPATH/"/>
 
 
 
 
 
-  <title>【网络协议】笔记四 | DHCP与PXE：IP是怎么来的，又是怎么没的？ | The program life</title>
+  <title>【Go】笔记一 | 工作区和GOPATH | The program life</title>
   
 
 
@@ -323,7 +318,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://itfriends.xyz/2018/07/27/【网络协议】笔记四：DHCP与PXE：IP是怎么来的，又是怎么没的？/">
+    <link itemprop="mainEntityOfPage" href="http://itfriends.xyz/2018/08/14/【Go】笔记一-工作区和GOPATH/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="淡然">
@@ -340,7 +335,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【网络协议】笔记四 | DHCP与PXE：IP是怎么来的，又是怎么没的？</h1>
+          <h1 class="post-title" itemprop="name headline">【Go】笔记一 | 工作区和GOPATH</h1>
         
 
         <div class="post-meta">
@@ -352,8 +347,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-27T22:56:24+08:00">
-                2018-07-27
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-14T15:48:30+08:00">
+                2018-08-14
               </time>
             
 
@@ -375,8 +370,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/网络协议/" itemprop="url" rel="index">
-                    <span itemprop="name">网络协议</span>
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
                   </a>
                 </span>
 
@@ -393,8 +388,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/07/27/【网络协议】笔记四：DHCP与PXE：IP是怎么来的，又是怎么没的？/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/07/27/【网络协议】笔记四：DHCP与PXE：IP是怎么来的，又是怎么没的？/" itemprop="commentCount"></span>
+                <a href="/2018/08/14/【Go】笔记一-工作区和GOPATH/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/14/【Go】笔记一-工作区和GOPATH/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -402,7 +397,7 @@
 
           
           
-             <span id="/2018/07/27/【网络协议】笔记四：DHCP与PXE：IP是怎么来的，又是怎么没的？/" class="leancloud_visitors" data-flag-title="【网络协议】笔记四 | DHCP与PXE：IP是怎么来的，又是怎么没的？">
+             <span id="/2018/08/14/【Go】笔记一-工作区和GOPATH/" class="leancloud_visitors" data-flag-title="【Go】笔记一 | 工作区和GOPATH">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -433,38 +428,69 @@
       
 
       
-        <p>租来的<br><a id="more"></a></p>
-<h1 id="知识点"><a href="#知识点" class="headerlink" title="知识点"></a>知识点</h1><ul>
-<li>配置IP地址</li>
-<li>房产中介DHCP</li>
-<li>装修队PXE</li>
+        <p>工作区和 GOPATH 的概念和含义是每个 Go 工程师都需了解的。<br><a id="more"></a><br>首发地址：</p>
+<h1 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h1><ul>
+<li>GOPATH的意义在与代码结构分层</li>
 </ul>
-<p>如果需要和其他机器通讯，我们就需要一个通讯地址，我们需要给网卡配置这么一个地址。</p>
-<h1 id="如何配置-IP-地址？"><a href="#如何配置-IP-地址？" class="headerlink" title="如何配置 IP 地址？"></a>如何配置 IP 地址？</h1><p>使用 net-tools：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ifconfig eth1 <span class="number">10.0</span><span class="number">.0</span><span class="number">.1</span>/<span class="number">24</span> </span><br><span class="line">$ sudo ifconfig eth1 up</span><br></pre></td></tr></table></figure>
-<p>使用 iproute2：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ sudo<span class="built_in"> ip </span>addr <span class="builtin-name">add</span> 10.0.0.1/24 dev eth1 </span><br><span class="line">$ sudo<span class="built_in"> ip </span>link <span class="builtin-name">set</span> up eth1</span><br></pre></td></tr></table></figure>
-<p>之前说过，有了目标ip地址，还需要目标MAC地址，而最终的目标MAC地址需要经过一个个网关才可以寻得，而当前需要寻得的是当前局域网中的网关的MAC地址。<br>Linux 默认的逻辑是，如果这是一个跨网段的调用，它便不会直接将包发送到网络上，而是企图将包发送到网关。<br>Linux会判断这个目标ip地址和自己的其中一个网卡是否同一个网段，才会发送ARP请求，获取网关的MAC地址，然后将包发出去。<br>如果没有配置网关，包就发包出去。<br>所以配置ip地址之前需要知道系统中网卡的网段，或者向管理员申请分配一段正确的ip地址。<br>正配置的时候，一定不是直接用命令配置的，而是放在一个配置文件里面。<br>不同系统的配置文件格式不同，但是无非就是 <strong>CIDR</strong>、<strong>子网掩码</strong>、<strong>广播地址</strong>和<strong>网关地址</strong>。</p>
-<h1 id="动态主机配置协议（DHCP）"><a href="#动态主机配置协议（DHCP）" class="headerlink" title="动态主机配置协议（DHCP）"></a>动态主机配置协议（DHCP）</h1><p>除了手动配置，还有一种是自动分配配置。<br>自动配置的协议，也就是称动态主机配置协议（Dynamic Host Configuration Protocol），简称DHCP。<br>网络管理员只需要备注一段共享ip地址，每一台新接入的机器都通过DHCP吸引，来这个共享的IP地址里申请，然后自动配置好就可以了，下线自动归还。<br>如果是数据中心里面的服务器，IP 一旦配置好，基本不会变，这就相当于买房自己装修。DHCP 的方式就相当于租房。你不用装修，都是帮你配置好的。你暂时用一下，用完退租就可以了。<br>通信都是广播包的形式：<br> <img src="https://img-blog.csdn.net/20180727223550105?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
+<h1 id="Go语言源码的组织方式"><a href="#Go语言源码的组织方式" class="headerlink" title="Go语言源码的组织方式"></a>Go语言源码的组织方式</h1><ul>
+<li>以代码包为基本组织单位</li>
+<li>代码包与目录一一对应</li>
+<li>目录有子目录，代码包也有子包</li>
+</ul>
+<p>代码包中可以任意个.go 扩展名的源码文件，需要被声明为属于同一个代码包。</p>
+<p>代码包的名称一般会与这些源码文件所在的目录同名。如果不同名，那么在构建、安装的过程中会以代码包名称为准。</p>
+<p><strong>每个代码包都会有导入路径。</strong></p>
+<p>代码包的导入路径是其他代码在使用该包中的程序实体时需要引入的路径。</p>
+<p>在实际使用程序实体之前，我们必须先导入其所在的代码包。具体的方式就是import该代码包的导入路径。</p>
+<figure class="highlight xl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> <span class="string">"github.com/labstack/echo"</span></span><br></pre></td></tr></table></figure>
+<p>在工作区中，一个代码包的导入路径实际上就是从 src 子目录，到该包的实际存储位置的相对路径。</p>
+<h1 id="了解源码安装后的结果"><a href="#了解源码安装后的结果" class="headerlink" title="了解源码安装后的结果"></a>了解源码安装后的结果</h1><ul>
+<li>源码文件通常会被放在某个工作区的 src 子目录下</li>
+<li>安装后如果产生了归档文件，就会放进该工作区的 pkg 子目录</li>
+<li>如果产生了可执行文件，就可能会放进该工作区的 bin 子目录。</li>
+</ul>
+<h2 id="归档文件存放的具体位置和规则"><a href="#归档文件存放的具体位置和规则" class="headerlink" title="归档文件存放的具体位置和规则"></a>归档文件存放的具体位置和规则</h2><ul>
+<li>源码文件会以代码包的形式组织起来，一个代码包其实就对应一个目录。</li>
+<li>安装某个代码包而产生的归档文件是与这个代码包同名的。</li>
+<li>放置它的相对目录就是该代码包的导入路径的直接父级。<br>比如，一个已存在的代码包的导入路径是<code>github.com/labstack/echo</code>生成的归档文件的相对目录就是 <strong>github.com/labstack</strong>， 文件名为 <strong>echo.a</strong></li>
+<li>归档文件的相对目录与 pkg 目录之间还有一级目录，叫做<strong>平台相关目录</strong>。<br>平台相关目录的名称是由 build（也称“构建”）的目标操作系统、下划线和目标计算架构的代号组成的。</li>
+</ul>
+<h1 id="理解构建和安装-Go-程序的过程"><a href="#理解构建和安装-Go-程序的过程" class="headerlink" title="理解构建和安装 Go 程序的过程"></a>理解构建和安装 Go 程序的过程</h1><ul>
+<li>构建使用命令go build，安装使用命令go install</li>
+<li>构建-&gt;库源码文件-&gt;临时目录<br>意义在于检查和验证</li>
+<li>构建-&gt;命令源码文件-&gt;源码文件所在目录</li>
+<li>安装-&gt;构建-&gt;链接-&gt;搬运到指定目录<br>（如果安装是库源码源文件，那么就在pkg目录的某个子目录中）<br>（如果安装是命令源码文件，那么就在bin目录的某个子目录中，或GOBIN）</li>
+</ul>
+<h1 id="go-build-命令一些可选项的用途和用法"><a href="#go-build-命令一些可选项的用途和用法" class="headerlink" title="go build 命令一些可选项的用途和用法"></a>go build 命令一些可选项的用途和用法</h1><p>运行go build命令的时候，<strong>默认不会编译</strong>目标代码包所依赖的那些代码包。</p>
+<p>如果被依赖的代码包的归档文件不存在，或者源码文件有了变化，那它还是会被编译。</p>
+<p>执行命令的时候加入标记<em>-a</em>,可强制编译。</p>
+<p>此时，不但目标代码包总是会被编译，它依赖的代码包也总会被编译，即使依赖的是标准库中的代码包也是如此。</p>
+<h2 id="确定哪些代码包被编译"><a href="#确定哪些代码包被编译" class="headerlink" title="确定哪些代码包被编译"></a>确定哪些代码包被编译</h2><ul>
+<li>-x 查看执行了哪些操作</li>
+<li>-n 查看而不执行操作</li>
+<li>-v 查看编译的代码包的名称，也-a搭配更可口噢</li>
+</ul>
+<h1 id="设置GOPATH有什么意义？"><a href="#设置GOPATH有什么意义？" class="headerlink" title="设置GOPATH有什么意义？"></a>设置GOPATH有什么意义？</h1><p>除了环境变量 GOPATH 的值可以是一个目录的路径，也可以包含多个目录路径，每个目录都代表 Go 语言的一个工作区（workspace）。<br><strong>意义在于代码结构的分层。</strong></p>
+<ul>
+<li>源码文件放在工作区的src目录</li>
+<li>归档文件放在工作区的pkg目录</li>
+<li>可执行文件放在工作区的bin目录</li>
+<li>归档文件的相对目录与 pkg 目录之间还有一级目录，叫做平台相关目录。</li>
+</ul>
+<h1 id="知识补充"><a href="#知识补充" class="headerlink" title="知识补充"></a>知识补充</h1><ul>
+<li><strong>命令源码文件</strong>，即包含 main() 入口函数的源码文件。</li>
+<li><strong>归档文件</strong>，就是<em>archive</em>文件，也就是常见的<em>.a</em>文件，实际上就是将多个源码文件编译生成的目标文件（.o）打包归档成一份.a文件，这是程序编译后生成的静态库文件。</li>
+</ul>
+<h1 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h1><h2 id="Go-语言在多个工作区中查找依赖包的时候是以怎样的顺序进行的？"><a href="#Go-语言在多个工作区中查找依赖包的时候是以怎样的顺序进行的？" class="headerlink" title="Go 语言在多个工作区中查找依赖包的时候是以怎样的顺序进行的？"></a>Go 语言在多个工作区中查找依赖包的时候是以怎样的顺序进行的？</h2><p>三个纬度延伸总结回答:  </p>
 <ol>
-<li>租客叫一声：我是XXX（MAC地址）要租房（IP地址）<br><img src="https://img-blog.csdn.net/20180727224012462?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
-<li>许多房产中介立马带着资料（提供的IP地址）赶过来回应<br><img src="https://img-blog.csdn.net/20180727224031166?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
-<li>租客选择一位回复最快最热情的房产中介，并告诉其他房产中介自己已经选择了那位房产中介，多谢其他房产中介并让他们拿回各自的资料给下一位租客<br><img src="https://img-blog.csdn.net/20180727224057177?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
-<li>房产中介拿签订合同过来给租客确认进住<br><img src="https://img-blog.csdn.net/20180727224113472?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
-<li>租客在租期过去一本的时候，需要告诉房产中介自己是否续期，然后房产中介回复更新确认租房信息，租客根据回复安排之后的一切。</li>
+<li>总执行顺序的角度<br>引入的包 -&gt; 当前包的变量常量 -&gt; init()[多个同一包则按照顺序执行] -&gt; main函数</li>
+<li>依赖包执行顺序<br><strong>被依赖的总是优先执行初始化</strong>，一个包只会被初始化一次。 a引入b，b引入c，则执行顺序c -&gt; b -&gt; a</li>
+<li>单个包执行顺序的角度<br>总的前提:按照包中源文件名的<strong>字典顺序来排序执行</strong>。<br>当前包排序后的变量常量 -&gt; 排序后的init()</li>
 </ol>
-<p>网络管理员不仅能自动分配 IP 地址，还能帮你自动安装操作系.系统</p>
-<h1 id="预启动执行环境（PXE）"><a href="#预启动执行环境（PXE）" class="headerlink" title="预启动执行环境（PXE）"></a>预启动执行环境（PXE）</h1><p>例如数据中心要给几百台机器自动安装操作系统就需要PXE了。</p>
-<h2 id="PXE是什么？"><a href="#PXE是什么？" class="headerlink" title="PXE是什么？"></a>PXE是什么？</h2><pre><code>PXE(preboot execute environment，预启动执行环境)是由Intel公司开发的最新技术，工作于Client/Server的网络模式，支持工作站通过网络从远端服务器下载映像，并由此支持通过网络启动操作系统，在启动过程中，终端要求服务器分配IP地址，再用TFTP（trivial file transfer protocol）或MTFTP(multicast trivial file transfer protocol)协议下载一个启动软件包到本机内存中执行，由这个启动软件包完成终端（客户端）基本软件设置，从而引导预先安装在服务器中的终端操作系统。PXE可以引导多种操作系统，如：Windows95/98/2000/windows2003/windows2008/winXP/win7/win8,linux系列系统等。
-</code></pre><h2 id="PXE表现形式："><a href="#PXE表现形式：" class="headerlink" title="PXE表现形式："></a>PXE表现形式：</h2><p>PXE最直接的表现是，在网络环境下工作站可以省去硬盘，但又不是通常所说的无盘站的概念，因为使用该技术的PC在网络方式下的运行速度要比有盘PC快3倍以上。当然使用PXE的PC也不是传统意义上的TERMINAL终端，因为使用了PXE的PC并不消耗服务器的CPU，RAM等资源，故服务器的硬件要求极低。</p>
-<h2 id="PXE启动原理"><a href="#PXE启动原理" class="headerlink" title="PXE启动原理"></a>PXE启动原理</h2><p>PXE 协议分为客户端和服务器端，由于还没有操作系统，只能先把客户端放在 BIOS 里面。当计算机引导时，BIOS把 PXE Client 调入内存中执行，然后由 PXE Client 将放置在远端的文件通过网络下载到本地运行<br>解析 PXE 的工作过程<br> <img src="https://img-blog.csdn.net/20180727223937827?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>这里有些像装修队：<strong>新房啥也没有装修，然后找装修公司（DHCP Server）安排一只装修队（TFTP Server）学习，想弄啥就跟装修队说。</strong></p>
-<h1 id="知识复盘"><a href="#知识复盘" class="headerlink" title="知识复盘"></a>知识复盘</h1><h2 id="在跨网段调用中，是如何获取目标IP的mac地址的？"><a href="#在跨网段调用中，是如何获取目标IP的mac地址的？" class="headerlink" title="在跨网段调用中，是如何获取目标IP的mac地址的？"></a>在跨网段调用中，是如何获取目标IP的mac地址的？</h2><p>从源IP网关获取所在网关mac, 然后又替换为目标IP所在网段网关的mac, 最后是目标IP的mac地址  </p>
-<h2 id="手动配置麻烦，怎么办？"><a href="#手动配置麻烦，怎么办？" class="headerlink" title="手动配置麻烦，怎么办？"></a>手动配置麻烦，怎么办？</h2><p><strong>DHCP</strong>！Dynamic Host Configuration Protocol！<br>DHCP, 让你自动配置IP，如同租客与房产中介商谈、签约、续租，广播还不能“抢单”。  </p>
-<h2 id="如果新来的，房子是空的-没有操作系统-，怎么办？"><a href="#如果新来的，房子是空的-没有操作系统-，怎么办？" class="headerlink" title="如果新来的，房子是空的(没有操作系统)，怎么办？"></a>如果新来的，房子是空的(没有操作系统)，怎么办？</h2><p><strong>PXE</strong>， Pre-boot Execution Environment.<br>“装修队”PXE，帮你安装操作系统。</p>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
-<li>DHCP 协议主要是用来给客户租用 IP 地址，和房产中介很像，要商谈、签约、续租，广播还不能“抢单”</li>
-<li>DHCP 协议能给客户推荐“装修队”PXE，能够安装操作系统</li>
-</ul>
+<h2 id="如果在多个工作区中都存在导入路径相同的代码包会产生冲突吗？"><a href="#如果在多个工作区中都存在导入路径相同的代码包会产生冲突吗？" class="headerlink" title="如果在多个工作区中都存在导入路径相同的代码包会产生冲突吗？"></a>如果在多个工作区中都存在导入路径相同的代码包会产生冲突吗？</h2><p>不冲突，因为按顺序找到所需要的包就不往后找了。</p>
+<p>————————————————————————————————</p>
+<p>笔记来源：</p>
+<p><img src="https://img-blog.csdn.net/20180814154640934?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
 
       
     </div>
@@ -482,7 +508,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/网络协议/" rel="tag"><i class="fa fa-tag"></i> 网络协议</a>
+            <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
           
         </div>
       
@@ -495,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/26/【网络协议】笔记三：ifconfig：最熟悉又陌生的命令行/" rel="next" title="【网络协议】笔记三 | ifconfig：最熟悉又陌生的命令行">
-                <i class="fa fa-chevron-left"></i> 【网络协议】笔记三 | ifconfig：最熟悉又陌生的命令行
+              <a href="/2018/08/07/【进阶攻略】初惑-技术方向的选择/" rel="next" title="【进阶攻略】初惑:技术方向的选择">
+                <i class="fa fa-chevron-left"></i> 【进阶攻略】初惑:技术方向的选择
               </a>
             
           </div>
@@ -504,10 +530,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/28/【网络协议】笔记五-从物理层到MAC层：如何在宿舍里自己组网玩联机游戏？/" rel="prev" title="【网络协议】笔记五 | 从物理层到MAC层：如何在宿舍里自己组网玩联机游戏？">
-                【网络协议】笔记五 | 从物理层到MAC层：如何在宿舍里自己组网玩联机游戏？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -687,7 +709,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#知识点"><span class="nav-number">1.</span> <span class="nav-text">知识点</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何配置-IP-地址？"><span class="nav-number">2.</span> <span class="nav-text">如何配置 IP 地址？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态主机配置协议（DHCP）"><span class="nav-number">3.</span> <span class="nav-text">动态主机配置协议（DHCP）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#预启动执行环境（PXE）"><span class="nav-number">4.</span> <span class="nav-text">预启动执行环境（PXE）</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#PXE是什么？"><span class="nav-number">4.1.</span> <span class="nav-text">PXE是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PXE表现形式："><span class="nav-number">4.2.</span> <span class="nav-text">PXE表现形式：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PXE启动原理"><span class="nav-number">4.3.</span> <span class="nav-text">PXE启动原理</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#知识复盘"><span class="nav-number">5.</span> <span class="nav-text">知识复盘</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#在跨网段调用中，是如何获取目标IP的mac地址的？"><span class="nav-number">5.1.</span> <span class="nav-text">在跨网段调用中，是如何获取目标IP的mac地址的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手动配置麻烦，怎么办？"><span class="nav-number">5.2.</span> <span class="nav-text">手动配置麻烦，怎么办？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果新来的，房子是空的-没有操作系统-，怎么办？"><span class="nav-number">5.3.</span> <span class="nav-text">如果新来的，房子是空的(没有操作系统)，怎么办？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">6.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#核心知识"><span class="nav-number">1.</span> <span class="nav-text">核心知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Go语言源码的组织方式"><span class="nav-number">2.</span> <span class="nav-text">Go语言源码的组织方式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#了解源码安装后的结果"><span class="nav-number">3.</span> <span class="nav-text">了解源码安装后的结果</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#归档文件存放的具体位置和规则"><span class="nav-number">3.1.</span> <span class="nav-text">归档文件存放的具体位置和规则</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#理解构建和安装-Go-程序的过程"><span class="nav-number">4.</span> <span class="nav-text">理解构建和安装 Go 程序的过程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#go-build-命令一些可选项的用途和用法"><span class="nav-number">5.</span> <span class="nav-text">go build 命令一些可选项的用途和用法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#确定哪些代码包被编译"><span class="nav-number">5.1.</span> <span class="nav-text">确定哪些代码包被编译</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#设置GOPATH有什么意义？"><span class="nav-number">6.</span> <span class="nav-text">设置GOPATH有什么意义？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#知识补充"><span class="nav-number">7.</span> <span class="nav-text">知识补充</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外知识"><span class="nav-number">8.</span> <span class="nav-text">额外知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Go-语言在多个工作区中查找依赖包的时候是以怎样的顺序进行的？"><span class="nav-number">8.1.</span> <span class="nav-text">Go 语言在多个工作区中查找依赖包的时候是以怎样的顺序进行的？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果在多个工作区中都存在导入路径相同的代码包会产生冲突吗？"><span class="nav-number">8.2.</span> <span class="nav-text">如果在多个工作区中都存在导入路径相同的代码包会产生冲突吗？</span></a></li></ol></li></ol></div>
             
 
           </div>
