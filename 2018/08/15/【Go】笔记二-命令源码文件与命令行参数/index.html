@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Python,爬虫," />
+  <meta name="keywords" content="Go," />
 
 
 
@@ -79,30 +79,21 @@
 
 
 
-<meta name="description" content="记录一次爬虫作业项目">
-<meta name="keywords" content="Python,爬虫">
+<meta name="description" content="自定义命令行参数">
+<meta name="keywords" content="Go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python 简单关键字爬取微信公众号文章">
-<meta property="og:url" content="http://itfriends.xyz/2018/06/26/Python-简单关键字爬取微信公众号文章/index.html">
+<meta property="og:title" content="【Go】笔记二 | 命令源码文件与命令行参数">
+<meta property="og:url" content="http://itfriends.xyz/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/index.html">
 <meta property="og:site_name" content="The program life">
-<meta property="og:description" content="记录一次爬虫作业项目">
+<meta property="og:description" content="自定义命令行参数">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="https://img-blog.csdn.net/2018062516322643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180625163237435?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180625163247521?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180625163256520?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180626123134321?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180626123141956?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180626123257615?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180626123346447?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180626123421257?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180723174827873?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:image" content="https://img-blog.csdn.net/20180723174841355?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
-<meta property="og:updated_time" content="2018-07-23T09:49:10.444Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20180815012014312?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180815012326670?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-08-14T18:18:04.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python 简单关键字爬取微信公众号文章">
-<meta name="twitter:description" content="记录一次爬虫作业项目">
-<meta name="twitter:image" content="https://img-blog.csdn.net/2018062516322643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta name="twitter:title" content="【Go】笔记二 | 命令源码文件与命令行参数">
+<meta name="twitter:description" content="自定义命令行参数">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180815012014312?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -132,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://itfriends.xyz/2018/06/26/Python-简单关键字爬取微信公众号文章/"/>
+  <link rel="canonical" href="http://itfriends.xyz/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/"/>
 
 
 
 
 
-  <title>Python 简单关键字爬取微信公众号文章 | The program life</title>
+  <title>【Go】笔记二 | 命令源码文件与命令行参数 | The program life</title>
   
 
 
@@ -328,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://itfriends.xyz/2018/06/26/Python-简单关键字爬取微信公众号文章/">
+    <link itemprop="mainEntityOfPage" href="http://itfriends.xyz/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="淡然">
@@ -345,7 +336,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python 简单关键字爬取微信公众号文章</h1>
+          <h1 class="post-title" itemprop="name headline">【Go】笔记二 | 命令源码文件与命令行参数</h1>
         
 
         <div class="post-meta">
@@ -357,8 +348,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-26T12:41:01+08:00">
-                2018-06-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T02:16:34+08:00">
+                2018-08-15
               </time>
             
 
@@ -380,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/爬虫/" itemprop="url" rel="index">
-                    <span itemprop="name">爬虫</span>
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
                   </a>
                 </span>
 
@@ -398,8 +389,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/06/26/Python-简单关键字爬取微信公众号文章/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/06/26/Python-简单关键字爬取微信公众号文章/" itemprop="commentCount"></span>
+                <a href="/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -407,7 +398,7 @@
 
           
           
-             <span id="/2018/06/26/Python-简单关键字爬取微信公众号文章/" class="leancloud_visitors" data-flag-title="Python 简单关键字爬取微信公众号文章">
+             <span id="/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/" class="leancloud_visitors" data-flag-title="【Go】笔记二 | 命令源码文件与命令行参数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -438,30 +429,60 @@
       
 
       
-        <p>记录一次爬虫作业项目<br><a id="more"></a></p>
-<h2 id="序"><a href="#序" class="headerlink" title="序"></a>序</h2><p><strong>爬取目标</strong>：微信公众号“纵梦广科”中“表白墙”（可选“吐槽墙”）的文章<br><strong>爬取字段</strong>：表白对象、表白内容<br><strong>爬取缘由</strong>：分析“表白墙”上的同学什么说得多的词<br><strong>爬取工具</strong>：matplotlib、wordcloud、jieba<br><strong>爬取结果</strong>: “表白墙”文章160篇<br><strong>爬取收获</strong>：简单爬取公众号文章、简单生成词云<br><strong>爬取注意</strong>：</p>
-<ul>
-<li>因为爬取内容可以简洁地直接保存txt文本进行绘画<strong>词云</strong>分析，所有并没有存入数据库</li>
-<li>本项目代码<strong>不具有可复用性</strong>，无论是登录的<strong>cookie</strong>还是文章的<strong>页数</strong>都需要重新手动获取输入</li>
-<li>代码中cookie的值太长了，都在一行不方便阅读，于是做了分行，可以根据个人喜好选择</li>
-<li>本代码通用于爬取公众号文章的<strong>标题</strong>和<strong>url</strong>，如需要爬取文章内容则需要手动更改爬取规则</li>
-<li><strong>token</strong>的值是爬取的公众号的标识符，如果更换公众号就需要更改该值</li>
-<li>本项目代码因为“表白墙”与“吐槽墙”网页结构相同，因此可以自行选择输入“表白墙”或“吐槽墙”进行爬取</li>
-<li>词云图在本文档后面</li>
-<li>获取cookie等操作步骤在本文最后</li>
+        <p>自定义命令行参数<br><a id="more"></a></p>
+<h1 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h1><ul>
+<li>自定义命令参数</li>
+<li>创建私有的命令参数容器</li>
 </ul>
-<p><strong>ps:</strong><br>在参考文章中的例子是直接搜索公众号全部内容文章的，我测试过这样爬取全部的话只能爬几页就被提示”操作太频繁“而无法爬取，但换成关键字”query”搜索的话没有出现问题，目前本代码爬取”表白墙“32页并没有本禁止。本来还尝试如何避免封装爬取全部文章但没有成功，但如果关键字是空白符或者其他标点符号的话也能获取大部分文章</p>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> lxml <span class="keyword">import</span> etree</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> wordcloud <span class="keyword">import</span> WordCloud</span><br><span class="line"><span class="keyword">import</span> jieba</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用Cookie，跳过登陆操作</span></span><br><span class="line">headers = &#123;</span><br><span class="line">    <span class="string">"Cookie"</span>: <span class="string">"noticeLoginFlag=1; remember_acct=820605644%40qq.com; "</span></span><br><span class="line">              <span class="string">"ua_id=F89e6CvMPIib8tkPAAAAAE8A9_O5KrS5oMM390XQRHI=; mm_lang=zh_CN; pgv_pvi=1996118016; "</span></span><br><span class="line">              <span class="string">"noticeLoginFlag=1; remember_acct=820605644%40qq.com; pgv_si=s2063726592; ticket_id=gh_86437b3d3630; "</span></span><br><span class="line">              <span class="string">"cert=3RRm40LWsECquCbg_jx5lQTMXRR4M0tN; rewardsn=; wxtokenkey=777; "</span></span><br><span class="line">              <span class="string">"uuid=652947b257247d453cd64dc13a5daf0b; ticket=d19dbee738a3be7f0806c8a5f726b8d8cac125f6; "</span></span><br><span class="line">              <span class="string">"data_bizuin=3555601673; bizuin=3551846274; "</span></span><br><span class="line">              <span class="string">"data_ticket=eeN9lRUD61DWiiLZEJyFKGoi70SoJ2dB1BoNi4PnSvNaf6R3jA83ZYyEI1y3LaOU; "</span></span><br><span class="line">              <span class="string">"slave_sid"</span></span><br><span class="line">              <span class="string">"=elBZTHhvYlc0VmNnYTM0SnZ6Wl9DaGZTNWh0M0VZVHlxUDBfWHNUW"</span></span><br><span class="line">              <span class="string">"jFVbEpOcFpmWEpuNUFXTEdGRWI5a3p6OGhrUWYweExnNjN2d0xMUWEwTVlLVWxIWk9mXzhzbkYxWndCQUVYTm"</span></span><br><span class="line">              <span class="string">"l1UnVxYlNWbmR3Q09VT2pMbEFMZDNhOFhXTnRnMlpDbDhvYzZWN2hQ;"</span></span><br><span class="line">              <span class="string">" slave_user=gh_86437b3d3630; xid=a5467f49610c64af7a7022c6a4596f40; "</span></span><br><span class="line">              <span class="string">"openid2ticket_oCS3u05exHidsZqiS_3Q8Yn-YtYI=JjxfUwXvqw0VBHJhW5TvmrOn8W5QMp/ReaanapVptWI="</span>,</span><br><span class="line">    <span class="string">"User-Agent"</span>: <span class="string">"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "</span></span><br><span class="line">                  <span class="string">"Chrome/65.0.3325.162 Safari/537.36"</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 词云</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_word</span><span class="params">(f)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    创建词云图片，默认样式</span></span><br><span class="line"><span class="string">    :param f:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    text_from_file_with_apath = open(f, <span class="string">'rb'</span>).read().decode(<span class="string">'utf-8'</span>)</span><br><span class="line">    wordlist_after_jieba = jieba.cut(text_from_file_with_apath, cut_all=<span class="keyword">True</span>)</span><br><span class="line">    print(wordlist_after_jieba)</span><br><span class="line">    wl_space_split = <span class="string">" "</span>.join(wordlist_after_jieba)</span><br><span class="line">    alice_mask = np.array(Image.open(<span class="string">"girl.jpg"</span>))  <span class="comment"># 以数组的形式加载图画</span></span><br><span class="line">    my_wordcloud = WordCloud(font_path=<span class="string">"simhei.ttf"</span>,  <span class="comment"># 设置字体</span></span><br><span class="line">                             background_color=<span class="string">"white"</span>,  <span class="comment"># 背景颜色</span></span><br><span class="line">                             max_words=<span class="number">2000</span>,  <span class="comment"># 词云显示的最大词数</span></span><br><span class="line">                             mask=alice_mask,  <span class="comment"># 设置背景图片</span></span><br><span class="line">                             max_font_size=<span class="number">100</span>,  <span class="comment"># 字体最大值</span></span><br><span class="line">                             random_state=<span class="number">42</span>,</span><br><span class="line">                             margin=<span class="number">2</span>,  <span class="comment"># 设置图片默认的大小,但是如果使用背景图片的话,那么保存的图片大小将会按照其大小保存,margin为词语边缘距离</span></span><br><span class="line">                             ).generate(wl_space_split)</span><br><span class="line">    plt.imshow(my_wordcloud)</span><br><span class="line">    plt.axis(<span class="string">"off"</span>)</span><br><span class="line">    plt.show()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_info</span><span class="params">(url)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取文章中的吐槽对象和吐槽内容</span></span><br><span class="line"><span class="string">    :param url:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    res = requests.get(url, headers=headers)</span><br><span class="line">    selector = etree.HTML(res.text)</span><br><span class="line">    names = selector.xpath(<span class="string">'// *[ @ id = "js_content"] // section / section[2] / section / span / span / text()'</span>)</span><br><span class="line">    contents = selector.xpath(<span class="string">'// *[ @ id = "js_content"] // section / section[2] / section / text()'</span>)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'name.txt'</span>, <span class="string">'ab+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> names:</span><br><span class="line">            f.write(s.strip().encode(<span class="string">'utf-8'</span>))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">'content.txt'</span>, <span class="string">'ab+'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> s <span class="keyword">in</span> contents:</span><br><span class="line">            f.write(s.strip().encode(<span class="string">'utf-8'</span>))</span><br><span class="line">    <span class="keyword">return</span> <span class="string">'content.txt'</span>, <span class="string">'name.txt'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_list</span><span class="params">(url, input_name, post_num)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    获取每页搜索结果的json中文章的标题和url</span></span><br><span class="line"><span class="string">    :param url:</span></span><br><span class="line"><span class="string">    :return:</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> range(post_num):</span><br><span class="line">        data = &#123;</span><br><span class="line">            <span class="string">"token"</span>: <span class="number">1111467131</span>,</span><br><span class="line">            <span class="string">"lang"</span>: <span class="string">"zh_CN"</span>,</span><br><span class="line">            <span class="string">"f"</span>: <span class="string">"json"</span>,</span><br><span class="line">            <span class="string">"ajax"</span>: <span class="string">"1"</span>,</span><br><span class="line">            <span class="string">"action"</span>: <span class="string">"list_ex"</span>,</span><br><span class="line">            <span class="string">"begin"</span>: num * <span class="number">5</span>,</span><br><span class="line">            <span class="string">"random"</span>: <span class="number">0.040206335386987035</span>,</span><br><span class="line">            <span class="string">"count"</span>: <span class="string">"5"</span>,</span><br><span class="line">            <span class="string">"query"</span>: input_name,</span><br><span class="line">            <span class="string">"fakeid"</span>: <span class="string">"MzAwMzExNTQyNQ=="</span>,</span><br><span class="line">            <span class="string">"type"</span>: <span class="string">"9"</span>,</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment"># 使用get方法进行提交</span></span><br><span class="line">        content_json = requests.get(url, headers=headers, params=data).json()</span><br><span class="line">        <span class="comment"># 返回了一个json，里面是每一页的数据</span></span><br><span class="line">        <span class="keyword">for</span> item <span class="keyword">in</span> content_json[<span class="string">"app_msg_list"</span>]:</span><br><span class="line">            <span class="comment"># 提取每页文章的标题及对应的url</span></span><br><span class="line">            print(item[<span class="string">"title"</span>], <span class="string">"url:"</span>, item[<span class="string">"link"</span>])</span><br><span class="line">            f1, f2 = get_info(item[<span class="string">"link"</span>])</span><br><span class="line">        time.sleep(random.randint(<span class="number">0</span>, <span class="number">30</span>))</span><br><span class="line">    <span class="keyword">return</span> f1, f2</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 目标url</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">"__main__"</span>:</span><br><span class="line">    input_name = <span class="string">"表白墙"</span>  <span class="comment"># 表白墙或吐槽墙任选其一</span></span><br><span class="line">    url = <span class="string">"https://mp.weixin.qq.com/cgi-bin/appmsg"</span></span><br><span class="line">    f1, f2 = get_list(url, input_name, post_num=<span class="number">32</span>)</span><br><span class="line">    get_word(f1)  <span class="comment"># 创建词云</span></span><br><span class="line">    get_word(f2)</span><br></pre></td></tr></table></figure>
-<h2 id="图片"><a href="#图片" class="headerlink" title="图片"></a>图片</h2><p>公众号截图：<br> <img src="https://img-blog.csdn.net/2018062516322643?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br> <img src="https://img-blog.csdn.net/20180625163237435?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>表白内容词云：<br> <img src="https://img-blog.csdn.net/20180625163247521?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>表白对象词云：<br><img src="https://img-blog.csdn.net/20180625163256520?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<h2 id="操作步骤"><a href="#操作步骤" class="headerlink" title="操作步骤"></a>操作步骤</h2><p>1、拥有一个微信个人订阅号，附上登陆和注册链接。<a href="https://mp.weixin.qq.com/" target="_blank" rel="noopener">微信公众平台</a></p>
-<p>2、好在之前无聊注册过一次，所以就可以直接登陆操作。没有注册的童鞋可以用自己的微信号注册一下，过程十分简单，在此就不赘述了</p>
-<p>3、登陆之后，点击左侧菜单栏“管理”-“素材管理”。再点击右边的“新建图文素材”</p>
-<p><img src="https://img-blog.csdn.net/20180626123134321?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<p>​弹出一个新的标签页，在上面的工具栏找到“超链接”并点击<br><img src="https://img-blog.csdn.net/20180626123141956?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<p>弹出了一个小窗口，选择“查找文章”，输入需要查找的公众号<br><img src="https://img-blog.csdn.net/20180626123257615?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>点击之后，可以弹出该公众号的所有历史文章<br><img src="https://img-blog.csdn.net/20180626123346447?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>关键字搜索、页数<br><img src="https://img-blog.csdn.net/20180626123421257?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<h2 id="查看cookie"><a href="#查看cookie" class="headerlink" title="查看cookie"></a>查看cookie</h2><p><img src="https://img-blog.csdn.net/20180723174827873?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<h2 id="查看token"><a href="#查看token" class="headerlink" title="查看token"></a>查看token</h2><p><img src="https://img-blog.csdn.net/20180723174841355?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></p>
-<p>本文部分参考该博友的文章：<a href="https://blog.csdn.net/wnma3mz/article/details/78570580" target="_blank" rel="noopener">https://blog.csdn.net/wnma3mz/article/details/78570580</a></p>
+<h1 id="首知"><a href="#首知" class="headerlink" title="首知"></a>首知</h1><ul>
+<li>环境变量 GOPATH 指向的是一个或多个工作区，而每个工作区中都会有以代码包为基本组织形式的源码文件。</li>
+<li>源码文件又分为三种，即：命令源码文件、库源码文件和测试源码文件，它们都有着不同的用途和编写规则。</li>
+</ul>
+<h1 id="命令源码文件的用途是什么，怎样编写它？"><a href="#命令源码文件的用途是什么，怎样编写它？" class="headerlink" title="命令源码文件的用途是什么，怎样编写它？"></a>命令源码文件的用途是什么，怎样编写它？</h1><p><strong>典型回答</strong></p>
+<ul>
+<li>命令源码文件是程序的运行入口，是每个可独立运行的程序必须拥有的。</li>
+<li>我们可以通过构建或安装生成与其对应的可执行文件，后者一般会与该命令源码文件的直接父目录同名。</li>
+</ul>
+<p>通过构建或安装命令源码文件生成的可执行文件就可以被视为“命令”，既然是命令，那么就应该具备接收参数的能力。</p>
+<p>例如，要实现<br><strong>根据运行程序时给定的参数问候某人</strong><br>代码</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (</span><br><span class="line">	<span class="string">"flag"</span> <span class="comment">// [1]</span></span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> name <span class="keyword">string</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span> &#123;</span><br><span class="line">	flag.StringVar(&amp;name, <span class="string">"name"</span>, <span class="string">"everyone"</span>, <span class="string">"The greeting object."</span>) <span class="comment">// [2]</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	flag.Parse() <span class="comment">// [3]</span></span><br><span class="line">	fmt.Printf(<span class="string">"Hello, %s!\n"</span>, name)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="https://img-blog.csdn.net/20180815012014312?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br><strong>解析</strong></p>
+<p><strong>[1]</strong>导入flag包，这是Go 语言标准库中专门用于接收和解析命令参数的包。</p>
+<p><strong>[2]</strong>设置命令参数<br>接受 4 个参数。</p>
+<ul>
+<li>第 1 个参数是用于存储该命令参数的值的地址，具体到这里就是在前面声明的变量name的地址了，由表达式&amp;name表示。</li>
+<li>第 2 个参数是为了指定该命令参数的名称，这里是name.</li>
+<li>第 3 个参数是为了指定在未追加该命令参数时的默认值，这里是everyone</li>
+<li>第 4 个函数参数，即是该命令参数的简短说明了，这在打印命令说明时会用到</li>
+</ul>
+<p>还有一个与flag.StringVar函数类似的函数，叫<strong>flag.String</strong>。</p>
+<p>这两个函数的区别是，<strong>后者会直接返回一个已经分配好的用于存储命令参数值的地址</strong>。</p>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = flag.<span class="built_in">String</span>(<span class="string">"name"</span>, <span class="string">"everyone"</span>, <span class="string">"The greeting object."</span>)</span><br></pre></td></tr></table></figure>
+<p>这里的name保持的就是地址</p>
+<p><strong>[3]</strong>用于真正解析命令参数，并把它们的值赋给相应的变量。</p>
+<p>因此最好把flag.Parse()放在main函数的函数体的第一行。</p>
+<p><strong>查看该命令源码文件的参数说明，–help：</strong><br><img src="https://img-blog.csdn.net/20180815012326670?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>像上面这一串<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">这是命令构建上述命令源码文件时**临时生成的可执行文件的完整路径**。</span><br><span class="line"></span><br><span class="line">如果我们先构建这个命令源码文件再运行生成的可执行文件，就会这样：</span><br><span class="line">![](https://img-blog.csdn.net/2018081501263412?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)</span><br><span class="line"></span><br><span class="line">自定义命令源码文件的参数使用说明</span><br><span class="line">================</span><br><span class="line"></span><br><span class="line">这有很多种方式，最简单的一种方式就是**对变量flag.Usag重新赋值**。</span><br><span class="line"></span><br><span class="line">flag.Usag重新赋值</span><br><span class="line">-------------</span><br><span class="line"></span><br><span class="line">flag.Usage的类型是func()，即一种无参数声明且无结果声明的函数类型。</span><br><span class="line"></span><br><span class="line">注意，对flag.Usage的赋值必须在调用flag.Parse函数之前</span><br><span class="line"></span><br><span class="line">代码</span><br></pre></td></tr></table></figure></p>
+<p>import (<br>    “flag” // [1]<br>    “fmt”<br>    “os”<br>)</p>
+<p>var name string</p>
+<p>func init() {<br>    flag.StringVar(&amp;name, “name”, “everyone”, “The greeting object.”) // [2]<br>}</p>
+<p>func main() {<br>    flag.Usage = func() {<br>        fmt.Fprintf(os.Stderr, “Usage of %s:\n”, “question”)<br>        flag.PrintDefaults()<br>    }<br>    flag.Parse() // [3]<br>    fmt.Printf(“Hello, %s!\n”, name)<br>}</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">运行</span><br><span class="line">![](https://img-blog.csdn.net/20180815013215610?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)</span><br><span class="line"></span><br><span class="line">flag.CommandLine重新赋值</span><br><span class="line">------------------</span><br><span class="line">现在再深入一层，我们在调用flag包中的一些函数（比如StringVar、Parse等等）的时候，实际上是在*<span class="strong">*调用flag.CommandLine变量的对应方法*</span><span class="strong">*。</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">*</span>flag.CommandLine*相当于默认情况下的命令参数容器。所以，通过对<span class="strong">*flag.CommandLine*</span>重新赋值，我们可以更深层次地定制当前命令源码文件的参数使用说明。</span><br><span class="line"></span><br><span class="line">现在我们把main函数体中的那条对flag.Usage变量的赋值语句注销掉，然后在init函数体的开始处添加如下代码：</span><br></pre></td></tr></table></figure>
+<p>flag.CommandLine = flag.NewFlagSet(“”, flag.ExitOnError)<br>flag.CommandLine.Usage = func() {<br>    fmt.Fprintf(os.Stderr, “Usage of %s:\n”, “question”)<br>    flag.PrintDefaults()<br>}<br><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">运行 **go <span class="keyword">run</span><span class="bash"> demo.go --<span class="built_in">help</span>**后，其输出会与上一次的输出的一致。不过后面这种定制的方法更加灵活。比如，当我们把为flag.CommandLine赋值的那条语句改为</span></span><br></pre></td></tr></table></figure></p>
+<p>flag.CommandLine = flag.NewFlagSet(“”, flag.PanicOnError)<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">运行结果</span><br><span class="line">![](https://img-blog.csdn.net/20180815015001719?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70)</span><br><span class="line">会产生另一种输出效果。</span><br><span class="line">这是由于我们在这里传给flag.NewFlagSet函数的第二个参数值是*<span class="strong">*flag.PanicOnError*</span><span class="strong">*。</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">flag.PanicOnError和flag.ExitOnError都是预定义在flag包中的*</span><span class="strong">*常量*</span><span class="strong">*。  </span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">flag.ExitOnError的含义是，告诉命令参数容器，当命令后跟--help或者参数设置的不正确的时候，在打印命令参数使用说明后*</span><span class="strong">*以状态码2结束当前程序*</span><span class="strong">*。</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">状态码2代表用户错误地使用了命令，而flag.PanicOnError与之的区别是在最后抛出“*</span><span class="strong">*运行时恐慌（panic）*</span><span class="strong">*”。  </span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">上述两种情况都会在我们调用flag.Parse函数时被触发。</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">运行时恐慌”是 Go 程序错误处理方面的概念</span></span><br><span class="line"><span class="strong"></span></span><br><span class="line"><span class="strong">创建私有的命令参数容器</span></span><br><span class="line"><span class="strong">-----------</span></span><br><span class="line"><span class="strong">在函数外再添加一个变量声明：</span></span><br></pre></td></tr></table></figure></p>
+<p>var cmdLine = flag.NewFlagSet(“question”, flag.ExitOnError)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">完整代码</span><br></pre></td></tr></table></figure></p>
+<p>package main</p>
+<p>import (<br>        “flag” // [1]<br>        “fmt”<br>        “os”<br>)</p>
+<p>var name string<br>var cmdLine = flag.NewFlagSet(“”, flag.ExitOnError)</p>
+<p>func init() {<br>        cmdLine.Usage = func() {<br>                fmt.Fprintf(os.Stderr, “Usage of %s:\n”, “question”)<br>                cmdLine.PrintDefaults()<br>        }<br>        cmdLine.StringVar(&amp;name, “name”, “everyone”, “The greeting object.”) // [2]<br>}</p>
+<p>func main() {<br>        cmdLine.Parse(os.Args[1:]) // [3]<br>        fmt.Printf(“Hello, %s!\n”, name)<br>}<br><code>`</code><br>其中的os.Args[1:]指的就是我们给定的那些命令参数。这样做就完全脱离了flag.CommandLine。</p>
+<p>这样更加灵活定制命令参数容器，并且完全不会影响到那个全局变量flag.CommandLine。</p>
+<h1 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h1><h2 id="默认情况下，我们可以让命令源码文件接受哪些类型的参数值？"><a href="#默认情况下，我们可以让命令源码文件接受哪些类型的参数值？" class="headerlink" title="默认情况下，我们可以让命令源码文件接受哪些类型的参数值？"></a>默认情况下，我们可以让命令源码文件接受哪些类型的参数值？</h2><p>int(int|int64|uint|uint64),<br>float(float|float64)<br>string,<br>bool,<br>duration(时间),<br>var(自定义)</p>
+<h2 id="我们可以把自定义的数据类型作为参数值的类型吗？如果可以，怎样做？"><a href="#我们可以把自定义的数据类型作为参数值的类型吗？如果可以，怎样做？" class="headerlink" title="我们可以把自定义的数据类型作为参数值的类型吗？如果可以，怎样做？"></a>我们可以把自定义的数据类型作为参数值的类型吗？如果可以，怎样做？</h2><p>关键就是使用<strong>flag.var()</strong>，关键点在于需要实现flag包的Value接口。</p>
+<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
+<li>源码文件分为三种:命令,库，测试。</li>
+<li>编写命令源码文件的命令参数关键包: flag。</li>
+<li>可以通过重新赋值创建新的命令参数容器</li>
+</ul>
 
       
     </div>
@@ -479,9 +500,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
-          
-            <a href="/tags/爬虫/" rel="tag"><i class="fa fa-tag"></i> 爬虫</a>
+            <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
           
         </div>
       
@@ -494,8 +513,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/12/Hexo-设置首页隐藏指定文章/" rel="next" title="Hexo 设置首页隐藏指定文章">
-                <i class="fa fa-chevron-left"></i> Hexo 设置首页隐藏指定文章
+              <a href="/2018/08/14/【Go】笔记一-工作区和GOPATH/" rel="next" title="【Go】笔记一 | 工作区和GOPATH">
+                <i class="fa fa-chevron-left"></i> 【Go】笔记一 | 工作区和GOPATH
               </a>
             
           </div>
@@ -503,10 +522,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/07/23/【网络协议】笔记一：为什么要学习网络协议？/" rel="prev" title="【网络协议】笔记一 | 为什么要学习网络协议？">
-                【网络协议】笔记一 | 为什么要学习网络协议？ <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -686,7 +701,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#序"><span class="nav-number">1.</span> <span class="nav-text">序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#图片"><span class="nav-number">3.</span> <span class="nav-text">图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作步骤"><span class="nav-number">4.</span> <span class="nav-text">操作步骤</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看cookie"><span class="nav-number">5.</span> <span class="nav-text">查看cookie</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看token"><span class="nav-number">6.</span> <span class="nav-text">查看token</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#核心知识"><span class="nav-number">1.</span> <span class="nav-text">核心知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#首知"><span class="nav-number">2.</span> <span class="nav-text">首知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#命令源码文件的用途是什么，怎样编写它？"><span class="nav-number">3.</span> <span class="nav-text">命令源码文件的用途是什么，怎样编写它？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外知识"><span class="nav-number">4.</span> <span class="nav-text">额外知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#默认情况下，我们可以让命令源码文件接受哪些类型的参数值？"><span class="nav-number">4.1.</span> <span class="nav-text">默认情况下，我们可以让命令源码文件接受哪些类型的参数值？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#我们可以把自定义的数据类型作为参数值的类型吗？如果可以，怎样做？"><span class="nav-number">4.2.</span> <span class="nav-text">我们可以把自定义的数据类型作为参数值的类型吗？如果可以，怎样做？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
