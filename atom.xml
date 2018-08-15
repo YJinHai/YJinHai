@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itfriends.xyz/"/>
-  <updated>2018-08-14T18:18:04.897Z</updated>
+  <updated>2018-08-15T09:33:28.935Z</updated>
   <id>http://itfriends.xyz/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【Go】笔记三 | 库源码文件</title>
+    <link href="http://itfriends.xyz/2018/08/15/%E3%80%90Go%E3%80%91%E7%AC%94%E8%AE%B0%E4%B8%89-%E5%BA%93%E6%BA%90%E7%A0%81%E6%96%87%E4%BB%B6/"/>
+    <id>http://itfriends.xyz/2018/08/15/【Go】笔记三-库源码文件/</id>
+    <published>2018-08-15T09:32:26.000Z</published>
+    <updated>2018-08-15T09:33:28.935Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>库源码文件不能被直接运行，它仅用于存放程序实体。只要遵从 Go 语言规范，这些程序实体就可以被其他代码使用。</strong></p><a id="more"></a><h1 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h1><ul><li>代码包声明</li><li>代码包引用</li><li>模块级私有internal</li></ul><h1 id="程序实体是什么？"><a href="#程序实体是什么？" class="headerlink" title="程序实体是什么？"></a>程序实体是什么？</h1><p>在 Go 语言中，它是变量、常量、函数、结构体和接口的统称。</p><h1 id="代码包声明的基本规则"><a href="#代码包声明的基本规则" class="headerlink" title="代码包声明的基本规则"></a>代码包声明的基本规则</h1><ol><li>第一条规则，同目录下的源码文件的代码包声明语句要一致。也就是说，它们要同属于一个代码包。这对于所有源码文件都是适用的。</li><li>第二条规则，源码文件声明的代码包的名称可以与其所在的目录的名称不同。在针对代码包进行构建时，生成的结果文件的主名称与其父目录的名称一致。</li></ol><h1 id="什么样的程序实体才可以被当前包外的代码引用？"><a href="#什么样的程序实体才可以被当前包外的代码引用？" class="headerlink" title="什么样的程序实体才可以被当前包外的代码引用？"></a>什么样的程序实体才可以被当前包外的代码引用？</h1><p>名称的首字母为大写的程序实体才可以被当前包外的代码引用，否则它就只能被当前包内的其他代码引用。</p><h1 id="对于程序实体，还可以使用怎样的访问权限规则？"><a href="#对于程序实体，还可以使用怎样的访问权限规则？" class="headerlink" title="对于程序实体，还可以使用怎样的访问权限规则？"></a>对于程序实体，还可以使用怎样的访问权限规则？</h1><p>通过创建<strong>internal代码包</strong>让一些程序实体仅仅能被当前模块中的其他代码引用。</p><p>这被称为 Go 程序实体的第三种访问权限：<strong>模块级私有</strong>。</p><p>具体规则是，internal代码包中声明的公开程序实体仅能被该代码包的<strong>直接父包及其子包中的代码引用</strong>。</p><p>当然，引用前需要先导入这个interna包。</p><p>对于其他代码包，导入该interna包都是非法的，无法通过编译。</p><h1 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h1><h2 id="如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep-lib-flag和flag，那么会产生冲突吗？"><a href="#如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep-lib-flag和flag，那么会产生冲突吗？" class="headerlink" title="如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep/lib/flag和flag，那么会产生冲突吗？"></a>如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep/lib/flag和flag，那么会产生冲突吗？</h2><p><strong>import后路径最后一级相同，不一定会冲突。</strong> </p><p>分为两种情况: </p><ol><li>如果文件夹下文件声明的<strong>包名相同</strong>，则肯定冲突，会报错redeclared。</li><li>如果文件夹下文件声明的<strong>包名不同</strong>，也不会冲突。</li></ol><h2 id="如果会产生冲突，那么怎样解决这种冲突，有几种方式？"><a href="#如果会产生冲突，那么怎样解决这种冲突，有几种方式？" class="headerlink" title="如果会产生冲突，那么怎样解决这种冲突，有几种方式？"></a>如果会产生冲突，那么怎样解决这种冲突，有几种方式？</h2><ol><li>给包设置别名,调用的时候来区分开不同的package,比如:import(b “bbbb”)</li><li>导入的点操作，import(. “bbbb”)。这样就可以直接调用bbbb下面的函数而不用再bbbb.funcname的方式调用。</li><li>如果只是想引入某包并没有在代码中实际调用则可以这么处理来避免冲突:import(_ “bbbb”)</li><li>像第一问一样采取不同的包名声明，毕竟包名不一定要和文件夹名一样</li></ol><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul><li>同一个文件夹下，包的声明语句需要相同，代表同一个包。</li><li>包名不需要和其所在的文件夹名相同。</li><li>首字母大小写来代表可见性，大写public/小写private</li><li>使用internal代码包模块级私有</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;库源码文件不能被直接运行，它仅用于存放程序实体。只要遵从 Go 语言规范，这些程序实体就可以被其他代码使用。&lt;/strong&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Go" scheme="http://itfriends.xyz/categories/Go/"/>
+    
+    
+      <category term="Go" scheme="http://itfriends.xyz/tags/Go/"/>
+    
+  </entry>
   
   <entry>
     <title>【Go】笔记二 | 命令源码文件与命令行参数</title>
