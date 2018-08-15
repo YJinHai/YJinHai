@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://itfriends.xyz/"/>
-  <updated>2018-08-15T09:33:28.935Z</updated>
+  <updated>2018-08-15T15:00:50.413Z</updated>
   <id>http://itfriends.xyz/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>【架构】笔记三 | 模式与框架</title>
+    <link href="http://itfriends.xyz/2018/08/15/%E3%80%90%E6%9E%B6%E6%9E%84%E3%80%91%E7%AC%94%E8%AE%B0%E4%B8%89-%E6%A8%A1%E5%BC%8F%E4%B8%8E%E6%A1%86%E6%9E%B6/"/>
+    <id>http://itfriends.xyz/2018/08/15/【架构】笔记三-模式与框架/</id>
+    <published>2018-08-15T14:59:16.000Z</published>
+    <updated>2018-08-15T15:00:50.413Z</updated>
+    
+    <content type="html"><![CDATA[<p>工程师与他那工具箱不可不说的故事</p><a id="more"></a><h1 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h1><ul><li>模式与框架关注于解决问题。</li><li>模式与框架都在于复用</li></ul><h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p><strong>“设计模式” 是描述可复用的已成功的解决方案的抽象概念。</strong></p><p>每种设计模式，对应着解决特定的一类问题。</p><p>既然特定对应，每个问题的类型似可以一样，但细节不尽相同，也就需要在开发过程中对应用设计模式把控，俗称“<strong>火候”</strong>。</p><h1 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h1><p><strong>框架就像是给程序员定制的开发脚手架</strong>。</p><p>一个框架是一个可复用的设计组件，它统一定义了高层设计和接口，使得从框架构建应用程序变变得非常容易。因此，框架可以算是打开“快速开发”与“代码复用”这两扇门的钥匙。</p><p>框架是面向编程或配置的半成品，是“<strong>工程师</strong>”。</p><h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p>框架和模式的共同点在于，它们都提供了一种<strong>问题的重用解决方案</strong>。其中，框架是<strong>代码复用</strong>，模式是<strong>设计复用</strong>。</p><p>软件开发是一种知识与智力的活动，知识的积累很关键。框架采用了一种结构化的方式来对特定的编程领域进行了<strong>规范化</strong>，在框架中直接就会包含很多模式的应用、模式的设计概念、领域的优化实践等，都被固化在了框架之中。</p><p><strong>框架是程序代码，而模式是关于这些程序代码的知识。</strong></p><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul><li>模式是代码层面，解决单个问题的成功方法</li><li>框架是设计层面，解决一系列问题的成功方法</li></ul><p>”架构“是设计图纸，“框架”是工程师，而“设计模式”是工程师按照设计图纸打造实现目标过程中使用工具，而打造的东西不一样工具当然不止一样。</p><ul><li><strong>工程师拿着工具对着设计图纸打造目标。</strong></li><li><strong>工具在于解决打造过程中的问题</strong></li><li><strong>工程师在于解决“实现目标”这个问题</strong></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;工程师与他那工具箱不可不说的故事&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="架构" scheme="http://itfriends.xyz/categories/%E6%9E%B6%E6%9E%84/"/>
+    
+    
+      <category term="架构" scheme="http://itfriends.xyz/tags/%E6%9E%B6%E6%9E%84/"/>
+    
+  </entry>
   
   <entry>
     <title>【Go】笔记三 | 库源码文件</title>
@@ -158,9 +180,9 @@
     <link href="http://itfriends.xyz/2018/07/29/%E3%80%90%E6%9E%B6%E6%9E%84%E3%80%91%E7%AC%94%E8%AE%B0%E4%B8%80-%E5%88%9D%E8%AF%86%E6%A1%86%E6%9E%B6%E4%B8%8E%E6%9E%B6%E6%9E%84/"/>
     <id>http://itfriends.xyz/2018/07/29/【架构】笔记一-初识框架与架构/</id>
     <published>2018-07-28T17:44:05.000Z</published>
-    <updated>2018-07-29T02:53:33.521Z</updated>
+    <updated>2018-08-15T14:34:04.992Z</updated>
     
-    <content type="html"><![CDATA[<p>有些难啃</p><a id="more"></a><h1 id="核心内容"><a href="#核心内容" class="headerlink" title="核心内容"></a>核心内容</h1><ul><li><strong>组件是达到可复用要求的模块</strong></li><li><strong>架构是设计图纸，框架是工程师</strong></li></ul><h1 id="系统与子系统"><a href="#系统与子系统" class="headerlink" title="系统与子系统"></a>系统与子系统</h1><p>“<strong>系统</strong>”的维基百科定义：<br><strong><code>系统泛指由一群有关联的个体组成，根据某种规则运作，能完成个别元件不能单独完成的工作的群体。它的意思是“总体”“整体”或“联盟”。</code></strong><br>”<strong>子系统</strong>“的维基百科定义：<br><strong><code>子系统也是由一群有关联的个体所组成的系统，多半会是更大系统中的一部分。</code></strong></p><p>子系统的定义和系统定义是一样的，只是观察的角度有差异，一个系统可能是另外一个更大系统的子系统。<br>例如</p><ul><li>微信本身是一个系统，包含聊天、登录、支付、朋友圈等子系统</li><li>朋友圈这个系统又包括动态、评论、点赞等子系统</li></ul><p>无论是系统还是子系统相对于自身系统而言，整个系统都是由个体也就是<strong>模块</strong>或<strong>组件</strong>构成的。</p><h1 id="模块与组件"><a href="#模块与组件" class="headerlink" title="模块与组件"></a>模块与组件</h1><ul><li>都是基于功能划分的单位</li><li>模块是从业务维度上职责的划分</li><li>组件是技术维度上的复用</li></ul><p>从设计上来看，组件强调复用，模块强调职责(内聚、分离)，或者说<strong>组件是达到可复用要求的模块</strong>。</p><p>模块和组件都是系统的组成部分，只是从不同的角度拆分系统。</p><h1 id="框架与架构"><a href="#框架与架构" class="headerlink" title="框架与架构"></a>框架与架构</h1><ul><li>框架关注的是“规范”，是面向编程或配置的半成品</li><li>架构关注的是“结构”，是软件系统的金字塔结构</li></ul><p><strong>所谓结构，是指任何一件事情都可以看做一个系统。</strong><br>而任何一个系统，都有多个元素（<strong>个体</strong>）组成，这些系统组成的元素之间的关系形成结构</p><p><strong>而规范就是要求按照这个结构进行操作的一个标准</strong></p><p><strong>架构是设计图纸，目的是“做什么”；框架是工程师，目的是“做出来”。</strong></p><p>选择不同的框架就是选择不同的工程师。</p><p>哪怕是基于同一张设计图纸不同的工程师（不同的框架）做出来的效果各不一样（性能的差异）。</p><p>比如说Spring MVC框架这个工程师，他拿着MVC架构这张设计图开发出来web应用了。</p><ul><li>这个web应用是MVC架构设计的，是基于Spring MVC框架开发的<br>（这个web工程是按照MVC设计图纸开发的，是Spring MVC工程师做的）</li><li>Spring MVC框架基于MVC架构设计开发了这个web应用<br>（Spring MVC工程师按照MVC这设计图纸做出了这个web工程）</li></ul><p>当我们想造一房子时，我们可以自己学习成为工程师（造轮子）来建造，但也许更好的选择是聘请专业的工程师（现成框架），我们提供材料（编写模块或组件）让其快速实现目标。</p><h1 id="知识复盘"><a href="#知识复盘" class="headerlink" title="知识复盘"></a>知识复盘</h1><h2 id="当我们在谈架构的时候，其实是在谈什么？"><a href="#当我们在谈架构的时候，其实是在谈什么？" class="headerlink" title="当我们在谈架构的时候，其实是在谈什么？"></a>当我们在谈架构的时候，其实是在谈什么？</h2><p>设计思想</p><h2 id="当我们在谈框架的时候，其实是在谈什么？"><a href="#当我们在谈框架的时候，其实是在谈什么？" class="headerlink" title="当我们在谈框架的时候，其实是在谈什么？"></a>当我们在谈框架的时候，其实是在谈什么？</h2><p>设计思想的具体化（用Spring、JSF、GWT哪个实现）</p><h2 id="如何正确介绍一个系统的架构与框架？"><a href="#如何正确介绍一个系统的架构与框架？" class="headerlink" title="如何正确介绍一个系统的架构与框架？"></a>如何正确介绍一个系统的架构与框架？</h2><p>这个XXX系统是基于XXX <strong>架构设计</strong>，基于XXX <strong>框架开发</strong>的</p><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul><li>系统是基于架构设计，基于框架开发，由模块或组件构造。</li><li>凡是可以体现出设计思想的都可以看做是架构，凡是可以根据设计开发出产品的都可以看做框架。</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>有些难啃</p><a id="more"></a><h1 id="核心内容"><a href="#核心内容" class="headerlink" title="核心内容"></a>核心内容</h1><ul><li><strong>组件是达到可复用要求的模块</strong></li><li><strong>架构是设计图纸，框架是工程师</strong></li></ul><h1 id="系统与子系统"><a href="#系统与子系统" class="headerlink" title="系统与子系统"></a>系统与子系统</h1><p>“<strong>系统</strong>”的维基百科定义：<br><strong><code>系统泛指由一群有关联的个体组成，根据某种规则运作，能完成个别元件不能单独完成的工作的群体。它的意思是“总体”“整体”或“联盟”。</code></strong><br>”<strong>子系统</strong>“的维基百科定义：<br><strong><code>子系统也是由一群有关联的个体所组成的系统，多半会是更大系统中的一部分。</code></strong></p><p>子系统的定义和系统定义是一样的，只是观察的角度有差异，一个系统可能是另外一个更大系统的子系统。<br>例如</p><ul><li>微信本身是一个系统，包含聊天、登录、支付、朋友圈等子系统</li><li>朋友圈这个系统又包括动态、评论、点赞等子系统</li></ul><p>无论是系统还是子系统相对于自身系统而言，整个系统都是由个体也就是<strong>模块</strong>或<strong>组件</strong>构成的。</p><h1 id="模块与组件"><a href="#模块与组件" class="headerlink" title="模块与组件"></a>模块与组件</h1><ul><li>都是基于功能划分的单位</li><li>模块是从业务维度上职责的划分</li><li>组件是技术维度上的复用</li></ul><p>从设计上来看，组件强调复用，模块强调职责(内聚、分离)，或者说<strong>组件是达到可复用要求的模块</strong>。</p><p>模块和组件都是系统的组成部分，只是从不同的角度拆分系统。</p><h1 id="框架与架构"><a href="#框架与架构" class="headerlink" title="框架与架构"></a>框架与架构</h1><ul><li>框架关注的是“规范”，是面向编程或配置的半成品</li><li>架构关注的是“结构”，是软件系统的金字塔结构</li></ul><p><strong>所谓结构，是指任何一件事情都可以看做一个系统。</strong><br>而任何一个系统，都有多个元素（<strong>个体</strong>）组成，这些系统组成的元素之间的关系形成结构</p><p><strong>而规范就是要求按照这个结构进行操作的一个标准</strong></p><p><strong>架构是设计图纸，目的是“做什么”；框架是工程师，目的是“做出来”。</strong></p><p>选择不同的框架就是选择不同的工程师。</p><p>哪怕是基于同一张设计图纸不同的工程师（不同的框架）做出来的效果各不一样（性能的差异）。</p><p>比如说Spring MVC框架这个工程师，他拿着MVC架构这张设计图开发出来web应用了。</p><ul><li>这个web应用是MVC架构设计的，是基于Spring MVC框架开发的<br>（这个web工程是按照MVC设计图纸开发的，是Spring MVC工程师做的）</li><li>Spring MVC框架基于MVC架构设计开发了这个web应用<br>（Spring MVC工程师按照MVC这设计图纸做出了这个web工程）</li></ul><p>当我们想造一房子时，我们可以自己学习成为工程师（造轮子）来建造，但也许更好的选择是聘请专业的工程师（现成框架），我们提供材料（编写模块或组件）让其快速实现目标。</p><h1 id="知识复盘"><a href="#知识复盘" class="headerlink" title="知识复盘"></a>知识复盘</h1><h2 id="当我们在谈架构的时候，其实是在谈什么？"><a href="#当我们在谈架构的时候，其实是在谈什么？" class="headerlink" title="当我们在谈架构的时候，其实是在谈什么？"></a>当我们在谈架构的时候，其实是在谈什么？</h2><p>设计思想</p><h2 id="当我们在谈框架的时候，其实是在谈什么？"><a href="#当我们在谈框架的时候，其实是在谈什么？" class="headerlink" title="当我们在谈框架的时候，其实是在谈什么？"></a>当我们在谈框架的时候，其实是在谈什么？</h2><p>设计思想的具体化（用Spring、JSF、GWT哪个实现）</p><h2 id="如何正确介绍一个系统的架构与框架？"><a href="#如何正确介绍一个系统的架构与框架？" class="headerlink" title="如何正确介绍一个系统的架构与框架？"></a>如何正确介绍一个系统的架构与框架？</h2><p>这个XXX系统是基于XXX <strong>架构设计</strong>，基于XXX <strong>框架开发</strong>的</p><h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul><li>系统是基于架构设计，基于框架开发，由模块或组件构造。</li><li>凡是可以体现出设计思想的都可以看做是架构，凡是可以根据设计开发出产品的都可以看做框架。</li></ul><p>最后，把“框架”比如成“工程师”，也许一下子理解不过来。其实框架就像是给程序员定制的开发脚手架，是一种半成品，是一种工具。就好比对于雇主我来说，要造房子，那么对于“造房子”这目标达成来说，工程师就是这达成过程中借助的一样工具。我给他设计图纸，他看得懂设计图纸，那么他就可以造得出来</p>]]></content>
     
     <summary type="html">
     
