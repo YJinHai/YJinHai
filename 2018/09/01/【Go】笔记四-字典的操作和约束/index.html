@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Go," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="取势、明道、优术">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The program life">
-<meta property="og:url" content="http://itfriends.xyz/categories/Go/index.html">
+<meta name="description" content="字典能存储的不是单一值的集合，而是键值对的集合。">
+<meta name="keywords" content="Go">
+<meta property="og:type" content="article">
+<meta property="og:title" content="【Go】笔记四 | 字典的操作和约束">
+<meta property="og:url" content="http://itfriends.xyz/2018/09/01/【Go】笔记四-字典的操作和约束/index.html">
 <meta property="og:site_name" content="The program life">
-<meta property="og:description" content="取势、明道、优术">
+<meta property="og:description" content="字典能存储的不是单一值的集合，而是键值对的集合。">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-09-01T15:47:05.922Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The program life">
-<meta name="twitter:description" content="取势、明道、优术">
+<meta name="twitter:title" content="【Go】笔记四 | 字典的操作和约束">
+<meta name="twitter:description" content="字典能存储的不是单一值的集合，而是键值对的集合。">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://itfriends.xyz/categories/Go/"/>
+  <link rel="canonical" href="http://itfriends.xyz/2018/09/01/【Go】笔记四-字典的操作和约束/"/>
 
 
 
 
 
-  <title>分类: Go | The program life</title>
+  <title>【Go】笔记四 | 字典的操作和约束 | The program life</title>
   
 
 
@@ -153,7 +155,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -310,139 +312,222 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Go<small>分类</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://itfriends.xyz/2018/09/01/【Go】笔记四-字典的操作和约束/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="淡然">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The program life">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/09/01/【Go】笔记四-字典的操作和约束/" itemprop="url">
-              
-                <span itemprop="name">【Go】笔记四 | 字典的操作和约束</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">【Go】笔记四 | 字典的操作和约束</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-09-01T23:41:38+08:00"
-              content="2018-09-01" >
-          09-01
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-01T23:41:38+08:00">
+                2018-09-01
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Go/" itemprop="url" rel="index">
+                    <span itemprop="name">Go</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/01/【Go】笔记四-字典的操作和约束/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/01/【Go】笔记四-字典的操作和约束/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/09/01/【Go】笔记四-字典的操作和约束/" class="leancloud_visitors" data-flag-title="【Go】笔记四 | 字典的操作和约束">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/15/【Go】笔记三-库源码文件/" itemprop="url">
-              
-                <span itemprop="name">【Go】笔记三 | 库源码文件</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-15T17:32:26+08:00"
-              content="2018-08-15" >
-          08-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/" itemprop="url">
-              
-                <span itemprop="name">【Go】笔记二 | 命令源码文件与命令行参数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-15T02:16:34+08:00"
-              content="2018-08-15" >
-          08-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/08/14/【Go】笔记一-工作区和GOPATH/" itemprop="url">
-              
-                <span itemprop="name">【Go】笔记一 | 工作区和GOPATH</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-08-14T15:48:30+08:00"
-              content="2018-08-14" >
-          08-14
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <p>字典能存储的不是单一值的集合，而是键值对的集合。<br><a id="more"></a></p>
+<p>一个“键”和一个“值”分别代表了一个从属于某一类型的独立值，把它们两个捆绑在一起就是一个键值对了。</p>
+<p>在 Go 语言规范中，应该是为了避免歧义，他们将键值对换了一种称呼，叫做：“键 - 元素对”。</p>
+<h1 id="字典的健类型不能是哪些类型？"><a href="#字典的健类型不能是哪些类型？" class="headerlink" title="字典的健类型不能是哪些类型？"></a>字典的健类型不能是哪些类型？</h1><p>典型回答是：Go 语言字典的键类型不可以是函数类型、字典类型和切片类型。</p>
+<h2 id="为什么这些类型不可以？"><a href="#为什么这些类型不可以？" class="headerlink" title="为什么这些类型不可以？"></a>为什么这些类型不可以？</h2><p>Go 语言规范规定，在键类型的值之间必须可以施加操作符==和!=，也就是说健类型必须要支持判等操作。</p>
+<h2 id="为什么键类型的值必须支持判等操作？"><a href="#为什么键类型的值必须支持判等操作？" class="headerlink" title="为什么键类型的值必须支持判等操作？"></a>为什么键类型的值必须支持判等操作？</h2><ul>
+<li>Go 语言的字典类型其实是一个哈希表（hash table）的特定实现。</li>
+<li>哈希表会先用哈希函数（hash function）把键值转换哈希值。</li>
+<li>哈希值通常是一个无符号的整数。一个哈希表会持有一定数量的桶（bucket），也可称之为哈希桶，这些哈希桶会均匀地储存其所属哈希表收纳的那些键- 元素对。</li>
+<li>键的查找就是键的哈希值与哈希桶里的值做判等操作</li>
+<li>如果有相等的，那就再用键值本身去对比一次。</li>
+</ul>
+<h2 id="为什么还要对比一次？"><a href="#为什么还要对比一次？" class="headerlink" title="为什么还要对比一次？"></a>为什么还要对比一次？</h2><p>原因是，不同值的哈希值是可能相同的。这有个术语，叫做“哈希碰撞”。</p>
+<h1 id="应该优先考虑哪些类型作为字典的键类型？"><a href="#应该优先考虑哪些类型作为字典的键类型？" class="headerlink" title="应该优先考虑哪些类型作为字典的键类型？"></a>应该优先考虑哪些类型作为字典的键类型？</h1><p><strong>优先选用数值类型和指针类型，通常情况下类型的宽度越小越好。</strong></p>
+<p><strong>如果非要选择字符串类型的话，最好对键值的长度进行额外的约束</strong></p>
+<p>求哈希和判等操作的速度越快，对应的类型就越适合作为键类型。</p>
+<p>以求哈希的操作为例，宽度越小的类型速度通常越快。</p>
+<h2 id="为什么要对字符串类型的键值长度进行额外的约束？"><a href="#为什么要对字符串类型的键值长度进行额外的约束？" class="headerlink" title="为什么要对字符串类型的键值长度进行额外的约束？"></a>为什么要对字符串类型的键值长度进行额外的约束？</h2><p>对于字符串类型，由于它的宽度是不定的，所以要看它的值的具体长度，长度越短求哈希越快。</p>
+<h2 id="类型的宽度是什么？"><a href="#类型的宽度是什么？" class="headerlink" title="类型的宽度是什么？"></a>类型的宽度是什么？</h2><p>类型的宽度是指它的<strong>单个值需要占用的字节数</strong>。比如，bool、int8和uint8类型的一个值需要占用的字节数都是1，因此这些类型的宽度就都是1。</p>
+<h2 id="那高级类型的宽度如何求得？"><a href="#那高级类型的宽度如何求得？" class="headerlink" title="那高级类型的宽度如何求得？"></a>那高级类型的宽度如何求得？</h2><ul>
+<li>对数组类型的值求哈希实际上是依次求得它的<strong>每个元素的哈希值并进行合并</strong>，所以速度就取决于它的元素类型以及它的长度。细则同上。</li>
+<li>与之类似，对结构体类型的值求哈希实际上就是对它的<strong>所有字段值求哈希并进行合并</strong>，所以关键在于它的各个字段的类型以及字段的数量。</li>
+<li>而对于接口类型，具体的哈希算法，则<strong>由值的实际类型决定</strong>。</li>
+</ul>
+<p>但不建议使用这些高级数据类型作为字典</p>
+<h2 id="为什么不建议高级数据类型作为字典的键类型？"><a href="#为什么不建议高级数据类型作为字典的键类型？" class="headerlink" title="为什么不建议高级数据类型作为字典的键类型？"></a>为什么不建议高级数据类型作为字典的键类型？</h2><p>不仅仅是因为对它们的值求哈希，以及判等的速度较慢，更是因为在它们的<strong>值中存在变数</strong>。</p>
+<p>比如，对一个数组来说，可以任意改变其中的元素值，但在变化前后，它却代表了两个不同的键值。</p>
+<h2 id="在值为nil的字典上执行读操作会成功吗，那写操作呢？"><a href="#在值为nil的字典上执行读操作会成功吗，那写操作呢？" class="headerlink" title="在值为nil的字典上执行读操作会成功吗，那写操作呢？"></a>在值为nil的字典上执行读操作会成功吗，那写操作呢？</h2><p>除了添加键 - 元素对，我们在一个值为nil的字典上做任何操作都不会引起错误。</p>
+<p>当我们试图在一个值为nil的字典中添加键- 元素对的时候，Go 语言的运行时系统就会立即抛出一个panic。</p>
+<p>这涉及程序运行时的稳定性。</p>
+<h1 id="字典类型的值是并发安全的吗？"><a href="#字典类型的值是并发安全的吗？" class="headerlink" title="字典类型的值是并发安全的吗？"></a>字典类型的值是并发安全的吗？</h1><p><strong>非原子操作的都不是并发安全的，map并不保证并发安全</strong>。</p>
+<p>用1.9之后新加入的<strong>sync.Map</strong>可以做到并发安全，如果不用的话需要对goroutine加读写锁。</p>
+<p>判断一个操作是否是原子的可以使用 <strong>go run race</strong> 命令做数据的竞争检测。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Go/" rel="tag"><i class="fa fa-tag"></i> Go</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/28/【成长】程序员的成长学习笔记/" rel="next" title="【成长】程序员的成长学习笔记">
+                <i class="fa fa-chevron-left"></i> 【成长】程序员的成长学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -450,6 +535,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -470,8 +562,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -576,6 +677,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#字典的健类型不能是哪些类型？"><span class="nav-number">1.</span> <span class="nav-text">字典的健类型不能是哪些类型？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么这些类型不可以？"><span class="nav-number">1.1.</span> <span class="nav-text">为什么这些类型不可以？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么键类型的值必须支持判等操作？"><span class="nav-number">1.2.</span> <span class="nav-text">为什么键类型的值必须支持判等操作？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么还要对比一次？"><span class="nav-number">1.3.</span> <span class="nav-text">为什么还要对比一次？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#应该优先考虑哪些类型作为字典的键类型？"><span class="nav-number">2.</span> <span class="nav-text">应该优先考虑哪些类型作为字典的键类型？</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要对字符串类型的键值长度进行额外的约束？"><span class="nav-number">2.1.</span> <span class="nav-text">为什么要对字符串类型的键值长度进行额外的约束？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型的宽度是什么？"><span class="nav-number">2.2.</span> <span class="nav-text">类型的宽度是什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那高级类型的宽度如何求得？"><span class="nav-number">2.3.</span> <span class="nav-text">那高级类型的宽度如何求得？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么不建议高级数据类型作为字典的键类型？"><span class="nav-number">2.4.</span> <span class="nav-text">为什么不建议高级数据类型作为字典的键类型？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在值为nil的字典上执行读操作会成功吗，那写操作呢？"><span class="nav-number">2.5.</span> <span class="nav-text">在值为nil的字典上执行读操作会成功吗，那写操作呢？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字典类型的值是并发安全的吗？"><span class="nav-number">3.</span> <span class="nav-text">字典类型的值是并发安全的吗？</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -729,6 +846,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
