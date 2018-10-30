@@ -79,18 +79,26 @@
 
 
 
-<meta name="description" content="库源码文件不能被直接运行，它仅用于存放程序实体。只要遵从 Go 语言规范，这些程序实体就可以被其他代码使用。">
+<meta name="description" content="一些channel的基本操作">
 <meta name="keywords" content="Go">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【Go】笔记三 | 库源码文件">
-<meta property="og:url" content="http://blog.golanger.info/2018/08/15/【Go】笔记三-库源码文件/index.html">
+<meta property="og:title" content="【Go】笔记六 | channel知识">
+<meta property="og:url" content="http://blog.golanger.info/2018/09/16/【Go】笔记六-channel知识/index.html">
 <meta property="og:site_name" content="The program life">
-<meta property="og:description" content="库源码文件不能被直接运行，它仅用于存放程序实体。只要遵从 Go 语言规范，这些程序实体就可以被其他代码使用。">
+<meta property="og:description" content="一些channel的基本操作">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-15T09:33:28.935Z">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913093856668?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913094022987?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913094333650?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913094445189?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913102439848?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913104719335?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180913104805479?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:updated_time" content="2018-09-16T00:56:24.777Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="【Go】笔记三 | 库源码文件">
-<meta name="twitter:description" content="库源码文件不能被直接运行，它仅用于存放程序实体。只要遵从 Go 语言规范，这些程序实体就可以被其他代码使用。">
+<meta name="twitter:title" content="【Go】笔记六 | channel知识">
+<meta name="twitter:description" content="一些channel的基本操作">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180913093856668?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
 
 
 
@@ -120,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.golanger.info/2018/08/15/【Go】笔记三-库源码文件/"/>
+  <link rel="canonical" href="http://blog.golanger.info/2018/09/16/【Go】笔记六-channel知识/"/>
 
 
 
 
 
-  <title>【Go】笔记三 | 库源码文件 | The program life</title>
+  <title>【Go】笔记六 | channel知识 | The program life</title>
   
 
 
@@ -326,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.golanger.info/2018/08/15/【Go】笔记三-库源码文件/">
+    <link itemprop="mainEntityOfPage" href="http://blog.golanger.info/2018/09/16/【Go】笔记六-channel知识/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="淡然">
@@ -343,7 +351,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【Go】笔记三 | 库源码文件</h1>
+          <h1 class="post-title" itemprop="name headline">【Go】笔记六 | channel知识</h1>
         
 
         <div class="post-meta">
@@ -355,8 +363,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-15T17:32:26+08:00">
-                2018-08-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-16T08:54:59+08:00">
+                2018-09-16
               </time>
             
 
@@ -396,8 +404,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/08/15/【Go】笔记三-库源码文件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/08/15/【Go】笔记三-库源码文件/" itemprop="commentCount"></span>
+                <a href="/2018/09/16/【Go】笔记六-channel知识/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/16/【Go】笔记六-channel知识/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +413,7 @@
 
           
           
-             <span id="/2018/08/15/【Go】笔记三-库源码文件/" class="leancloud_visitors" data-flag-title="【Go】笔记三 | 库源码文件">
+             <span id="/2018/09/16/【Go】笔记六-channel知识/" class="leancloud_visitors" data-flag-title="【Go】笔记六 | channel知识">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,42 +444,59 @@
       
 
       
-        <p><strong>库源码文件不能被直接运行，它仅用于存放程序实体。只要遵从 Go 语言规范，这些程序实体就可以被其他代码使用。</strong></p>
-<a id="more"></a>
-<h1 id="核心知识"><a href="#核心知识" class="headerlink" title="核心知识"></a>核心知识</h1><ul>
-<li>代码包声明</li>
-<li>代码包引用</li>
-<li>模块级私有internal</li>
+        <p>一些channel的基本操作<br><a id="more"></a></p>
+<h1 id="对通道的发送和接收操作都有哪些基本的特性？"><a href="#对通道的发送和接收操作都有哪些基本的特性？" class="headerlink" title="对通道的发送和接收操作都有哪些基本的特性？"></a>对通道的发送和接收操作都有哪些基本的特性？</h1><ul>
+<li>对于同一个通道，发送操作之间是互斥的，接收操作之间也是互斥的。</li>
+<li>发送操作和接收操作中对元素值的处理都是不可分割的。</li>
+<li>发送操作在完全完成之前会被阻塞。接收操作也是如此。</li>
 </ul>
-<h1 id="程序实体是什么？"><a href="#程序实体是什么？" class="headerlink" title="程序实体是什么？"></a>程序实体是什么？</h1><p>在 Go 语言中，它是变量、常量、函数、结构体和接口的统称。</p>
-<h1 id="代码包声明的基本规则"><a href="#代码包声明的基本规则" class="headerlink" title="代码包声明的基本规则"></a>代码包声明的基本规则</h1><ol>
-<li>第一条规则，同目录下的源码文件的代码包声明语句要一致。也就是说，它们要同属于一个代码包。这对于所有源码文件都是适用的。</li>
-<li>第二条规则，源码文件声明的代码包的名称可以与其所在的目录的名称不同。在针对代码包进行构建时，生成的结果文件的主名称与其父目录的名称一致。</li>
-</ol>
-<h1 id="什么样的程序实体才可以被当前包外的代码引用？"><a href="#什么样的程序实体才可以被当前包外的代码引用？" class="headerlink" title="什么样的程序实体才可以被当前包外的代码引用？"></a>什么样的程序实体才可以被当前包外的代码引用？</h1><p>名称的首字母为大写的程序实体才可以被当前包外的代码引用，否则它就只能被当前包内的其他代码引用。</p>
-<h1 id="对于程序实体，还可以使用怎样的访问权限规则？"><a href="#对于程序实体，还可以使用怎样的访问权限规则？" class="headerlink" title="对于程序实体，还可以使用怎样的访问权限规则？"></a>对于程序实体，还可以使用怎样的访问权限规则？</h1><p>通过创建<strong>internal代码包</strong>让一些程序实体仅仅能被当前模块中的其他代码引用。</p>
-<p>这被称为 Go 程序实体的第三种访问权限：<strong>模块级私有</strong>。</p>
-<p>具体规则是，internal代码包中声明的公开程序实体仅能被该代码包的<strong>直接父包及其子包中的代码引用</strong>。</p>
-<p>当然，引用前需要先导入这个interna包。</p>
-<p>对于其他代码包，导入该interna包都是非法的，无法通过编译。</p>
-<h1 id="额外知识"><a href="#额外知识" class="headerlink" title="额外知识"></a>额外知识</h1><h2 id="如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep-lib-flag和flag，那么会产生冲突吗？"><a href="#如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep-lib-flag和flag，那么会产生冲突吗？" class="headerlink" title="如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep/lib/flag和flag，那么会产生冲突吗？"></a>如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep/lib/flag和flag，那么会产生冲突吗？</h2><p><strong>import后路径最后一级相同，不一定会冲突。</strong> </p>
-<p>分为两种情况: </p>
-<ol>
-<li>如果文件夹下文件声明的<strong>包名相同</strong>，则肯定冲突，会报错redeclared。</li>
-<li>如果文件夹下文件声明的<strong>包名不同</strong>，也不会冲突。</li>
-</ol>
-<h2 id="如果会产生冲突，那么怎样解决这种冲突，有几种方式？"><a href="#如果会产生冲突，那么怎样解决这种冲突，有几种方式？" class="headerlink" title="如果会产生冲突，那么怎样解决这种冲突，有几种方式？"></a>如果会产生冲突，那么怎样解决这种冲突，有几种方式？</h2><ol>
-<li>给包设置别名,调用的时候来区分开不同的package,比如:import(b “bbbb”)</li>
-<li>导入的点操作，import(. “bbbb”)。这样就可以直接调用bbbb下面的函数而不用再bbbb.funcname的方式调用。</li>
-<li>如果只是想引入某包并没有在代码中实际调用则可以这么处理来避免冲突:import(_ “bbbb”)</li>
-<li>像第一问一样采取不同的包名声明，毕竟包名不一定要和文件夹名一样</li>
-</ol>
-<h1 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h1><ul>
-<li>同一个文件夹下，包的声明语句需要相同，代表同一个包。</li>
-<li>包名不需要和其所在的文件夹名相同。</li>
-<li>首字母大小写来代表可见性，大写public/小写private</li>
-<li>使用internal代码包模块级私有</li>
+<p>第一个基本特性。在同一时刻，Go 语言的运行时系统（以下简称运行时系统）只会执行对同一个通道的任意个发送操作或接受操作中的某一个。<br>其中注意的一个细节是，<strong>元素值从外界进入通道时会被复制</strong>。更具体地说，进入通道的并不是在接收操作符右边的那个元素值，而是它的副本。</p>
+<p>第二个基本特性。 这里的“不可分割”的意思是，它们处理元素值时都是一气呵成的，绝不会被打断。原子性。</p>
+<p>第三个基本特性。 一般情况下，发送操作包括了“复制元素值”和“放置副本到通道内部”这两个步骤。另外，接收操作通常包含了“复制通道内的元素值”“放置副本到接收方”“删掉原值”三个步骤。</p>
+<h1 id="发送操作和接收操作在什么时候可能被长时间的阻塞？"><a href="#发送操作和接收操作在什么时候可能被长时间的阻塞？" class="headerlink" title="发送操作和接收操作在什么时候可能被长时间的阻塞？"></a>发送操作和接收操作在什么时候可能被长时间的阻塞？</h1><ul>
+<li>向 nil channel 写数据将卡死，一直阻塞<br>  <img src="https://img-blog.csdn.net/20180913093856668?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
+<li>从 nil channel 读数据将卡死，一直阻塞<br><img src="https://img-blog.csdn.net/20180913094022987?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
+<li>向已满的缓存 channel 写数据将卡死，一直阻塞<br><img src="https://img-blog.csdn.net/20180913094333650?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
+<li>向已空的缓存 channel 读数据将卡死，一直阻塞<br><img src="https://img-blog.csdn.net/20180913094445189?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
+<li>向非缓存 channel 读写数据，一开始执行就会被阻塞，直到配对的操作也开始执行<br><img src="https://img-blog.csdn.net/20180913102439848?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""><br>配对操作</li>
 </ul>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"sync"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="comment">// wg 用来等待程序完成</span></span><br><span class="line">	<span class="comment">// 计数加 2，表示要等待两个goroutine</span></span><br><span class="line">	<span class="keyword">var</span> wg sync.WaitGroup</span><br><span class="line">	wg.Add(<span class="number">2</span>)</span><br><span class="line">	</span><br><span class="line">    c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>)</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">// 在函数退出时调用Done 来通知main 函数工作已经完成</span></span><br><span class="line">		<span class="keyword">defer</span> wg.Done()</span><br><span class="line">		</span><br><span class="line">		c &lt;- <span class="number">520</span> <span class="comment">// 流入信道，堵塞当前线, 没人取走数据信道不会打开</span></span><br><span class="line">	&#125;()</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">// 在函数退出时调用Done 来通知main 函数工作已经完成</span></span><br><span class="line">		<span class="keyword">defer</span> wg.Done()</span><br><span class="line">		</span><br><span class="line">		<span class="built_in">println</span>(&lt;-c) <span class="comment">// 接受数据，阻塞解除</span></span><br><span class="line">	&#125;()</span><br><span class="line"></span><br><span class="line">	wg.Wait()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="发送操作和接收操作在什么时候会引发-panic？"><a href="#发送操作和接收操作在什么时候会引发-panic？" class="headerlink" title="发送操作和接收操作在什么时候会引发 panic？"></a>发送操作和接收操作在什么时候会引发 panic？</h1><ul>
+<li>向已关闭的 channel 写数据将造成 panic<br><img src="https://img-blog.csdn.net/20180913104719335?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
+<li>向已关闭的 channel 再次关闭将会造成panic<br><img src="https://img-blog.csdn.net/20180913104805479?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L20wXzM3MzIzNzcx/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt=""></li>
+</ul>
+<p><strong>通过接收表达式的第二个结果值，来判断通道是否关闭是可能有延时的，应当让发送方来关闭通道。</strong><br>如果通道关闭时，里面还有元素值未被取出，那么接收表达式的第一个结果，仍会是通道中的某一个元素值，而第二个结果值一定会是true</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	ch1 := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line">	<span class="comment">// 发送方。</span></span><br><span class="line">	<span class="keyword">go</span> <span class="function"><span class="keyword">func</span><span class="params">()</span></span> &#123;</span><br><span class="line">		<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="number">10</span>; i++ &#123;</span><br><span class="line">			fmt.Printf(<span class="string">"Sender: sending element %v...\n"</span>, i)</span><br><span class="line">			ch1 &lt;- i</span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Println(<span class="string">"Sender: close the channel..."</span>)</span><br><span class="line">		<span class="built_in">close</span>(ch1)</span><br><span class="line">	&#125;()</span><br><span class="line"></span><br><span class="line">	<span class="comment">// 接收方。</span></span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		elem, ok := &lt;-ch1</span><br><span class="line">		<span class="keyword">if</span> !ok &#123;</span><br><span class="line">			fmt.Println(<span class="string">"Receiver: closed channel"</span>)</span><br><span class="line">			<span class="keyword">break</span></span><br><span class="line">		&#125;</span><br><span class="line">		fmt.Printf(<span class="string">"Receiver: received an element: %v\n"</span>, elem)</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	fmt.Println(<span class="string">"End."</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="通道的长度代表着什么？它在什么时候会和通道的容量相同？"><a href="#通道的长度代表着什么？它在什么时候会和通道的容量相同？" class="headerlink" title="通道的长度代表着什么？它在什么时候会和通道的容量相同？"></a>通道的长度代表着什么？它在什么时候会和通道的容量相同？</h1><p>长度代表通道当前包含的元素个数，容量就是初始化时你设置的那个数。</p>
+<h1 id="什么是单向通道？"><a href="#什么是单向通道？" class="headerlink" title="什么是单向通道？"></a>什么是单向通道？</h1><p>我们在说“通道”的时候指的都是双向通道，即：既可以发也可以收的通道。</p>
+<p>所谓单向通道就是，只能发不能收，或者只能收不能发的通道。一个通道是双向的，还是单向的是由它的类型字面量体现的。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> uselessChan = <span class="built_in">make</span>(<span class="keyword">chan</span>&lt;- <span class="keyword">int</span>, <span class="number">1</span>)</span><br><span class="line"><span class="comment">//发送通道，操作符&lt;-在关键字chan右边，表示对操作管道来说，只能发而不能收</span></span><br><span class="line"><span class="keyword">var</span> uselessChan = <span class="built_in">make</span>(&lt;-<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">1</span>)</span><br><span class="line"><span class="comment">//接受通道，操作符&lt;-在关键字chan左边，表示对操作管道来说，只能收而不能发</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">intChan1 := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">3</span>)</span><br><span class="line">SendInt(intChan1)</span><br><span class="line"><span class="comment">//双向通道，</span></span><br></pre></td></tr></table></figure>
+<p>从上述变量的名字上你也能猜到，这样的通道是没用的。通道就是为了传递数据而存在的，声明一个只有一端（发送端或者接收端）能用的通道没有任何意义。</p>
+<h1 id="单向通道的用途究竟在哪儿呢？"><a href="#单向通道的用途究竟在哪儿呢？" class="headerlink" title="单向通道的用途究竟在哪儿呢？"></a>单向通道的用途究竟在哪儿呢？</h1><p>概括地说，单向通道最主要的用途就是约束其他代码的行为，更大作用于编写模板代码或者可扩展的程序库的时候。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">SendInt</span><span class="params">(ch <span class="keyword">chan</span>&lt;- <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="comment">//只能接受，不能发送</span></span><br><span class="line">	ch &lt;- rand.Intn(<span class="number">1000</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实际场景中，这种约束一般会出现在接口类型声明中的某个方法定义上</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">type Notifier<span class="built_in"> interface </span>&#123;</span><br><span class="line">	SendInt(ch chan&lt;- int)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>调用有以单向通道作为参的函数时，只需要传入元素类型匹配的双向通道，会自动地把双向通道转换为函数所需的单向通道</strong>。</p>
+<h1 id="select语句与通道怎样联用，应该注意些什么？"><a href="#select语句与通道怎样联用，应该注意些什么？" class="headerlink" title="select语句与通道怎样联用，应该注意些什么？"></a>select语句与通道怎样联用，应该注意些什么？</h1><ol>
+<li><strong>select语句只能与通道联用</strong>，它一般由若干个分支组成。每次执行这种语句的时候，一般只有一个分支中的代码会被运行。</li>
+<li>基本功能与switch差不多，只不过select case 表达式中都<strong>只能包含操作通道的表达式</strong>，比如接收表达式。</li>
+</ol>
+<p>注意</p>
+<p>因从已关闭的通道接受只能接受到nil，所以通常通过接受表达式的第二个结果值来判断通道是否已经关闭</p>
+<p>select语句只能对其中的每一个case表达式各求值一次。<br>所以，如果我们想连续或定时地操作其中的通道的话，就往往需要通过在for语句中嵌入select语句的方式实现。</p>
+<h1 id="select语句的分支选择规则都有哪些？"><a href="#select语句的分支选择规则都有哪些？" class="headerlink" title="select语句的分支选择规则都有哪些？"></a>select语句的分支选择规则都有哪些？</h1><ol>
+<li>每个case表达式，都至少会包含一个代表操作的可以被赋值表达式。</li>
+<li>case表达式都会在该语句执行开始时先被求值，并且求值的顺序是依从代码编写的顺序从上到下的。</li>
+<li>对于每一个case表达式，如果其中的发送表达式或者接收表达式在被求值时，相应的操作正处于阻塞状态，那么对该case表达式的求值就是不成功的。</li>
+<li>仅当select语句中的所有case表达式都被求值完毕后，它才开始选择候选分支。</li>
+<li>如果select语句发现同时有多个候选分支满足选择条件，那么它就会用一种伪随机的算法在这些分支中选择一个并执行。</li>
+<li>一条select语句中只能够有一个默认分支。</li>
+<li>select语句的每次执行，包括case表达式求值和分支选择，都是独立的。</li>
+</ol>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> channels = [<span class="number">3</span>]<span class="keyword">chan</span> <span class="keyword">int</span>&#123;</span><br><span class="line">	<span class="literal">nil</span>,</span><br><span class="line">	<span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>),</span><br><span class="line">	<span class="literal">nil</span>,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> numbers = []<span class="keyword">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">select</span> &#123;</span><br><span class="line">	<span class="keyword">case</span> getChan(<span class="number">0</span>) &lt;- getNumber(<span class="number">0</span>):</span><br><span class="line">		fmt.Println(<span class="string">"The first candidate case is selected."</span>)</span><br><span class="line">	<span class="keyword">case</span> getChan(<span class="number">1</span>) &lt;- getNumber(<span class="number">1</span>):</span><br><span class="line">		fmt.Println(<span class="string">"The second candidate case is selected."</span>)</span><br><span class="line">	<span class="keyword">case</span> getChan(<span class="number">2</span>) &lt;- getNumber(<span class="number">2</span>):</span><br><span class="line">		fmt.Println(<span class="string">"The third candidate case is selected"</span>)</span><br><span class="line">	<span class="keyword">default</span>:</span><br><span class="line">		fmt.Println(<span class="string">"No candidate case is selected!"</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getNumber</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	fmt.Printf(<span class="string">"numbers[%d]\n"</span>, i)</span><br><span class="line">	<span class="keyword">return</span> numbers[i]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getChan</span><span class="params">(i <span class="keyword">int</span>)</span> <span class="title">chan</span> <span class="title">int</span></span> &#123;</span><br><span class="line">	fmt.Printf(<span class="string">"channels[%d]\n"</span>, i)</span><br><span class="line">	<span class="keyword">return</span> channels[i]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果在select语句中发现某个通道已关闭，那么应该怎样屏蔽掉它所在的分支？<br>1.在候选分支中将接收表达式赋值给两个变量，使用第二个变量来判断 channel 是否关闭，如果关闭，可以使用 break 来屏蔽这条候选分支的逻辑代码。<br>在select语句与for语句联用时，怎样直接退出外层的for语句？<br>2.显然使用 break 语句只能推出 select 分支语句，无法退出外层 for 循环，要想在 select 分支语句中直接跳出外层循环，需要借助 标签来完成，在外层 for 循环语句前 定义标签 Loop:（当然也可以起个其他名字）在 select 的 case 语句中使用 goto Loop 或者 break Loop 来直接跳出外层 for 循环。<br>当然，这两者是有区别的。区别在于「break 标签 」只能用于 for 循环，且标签在 for 循环前面。而「goto 标签」是一个通用的跳转语句。</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	c := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">2</span>)</span><br><span class="line">	cc := <span class="built_in">make</span>(<span class="keyword">chan</span> <span class="keyword">int</span>, <span class="number">1</span>)</span><br><span class="line">	c &lt;- <span class="number">1</span></span><br><span class="line">	c &lt;- <span class="number">2</span></span><br><span class="line">	cc &lt;- <span class="number">3</span></span><br><span class="line">	Loop:</span><br><span class="line">	<span class="keyword">for</span> &#123;</span><br><span class="line">		<span class="keyword">select</span> &#123;</span><br><span class="line">		<span class="keyword">case</span> &lt;-c:</span><br><span class="line">			fmt.Print(<span class="string">"c 1"</span>)</span><br><span class="line">		<span class="keyword">case</span> &lt;-c:</span><br><span class="line">			fmt.Print(<span class="string">"c 2"</span>)</span><br><span class="line">			<span class="keyword">goto</span> end</span><br><span class="line">		<span class="keyword">case</span> &lt;-cc:</span><br><span class="line">			<span class="keyword">break</span> Loop</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Print(<span class="string">"out for"</span>)</span><br><span class="line">	end:</span><br><span class="line">		fmt.Print(<span class="string">"out end"</span>)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -502,8 +527,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/15/【Go】笔记二-命令源码文件与命令行参数/" rel="next" title="【Go】笔记二 | 命令源码文件与命令行参数">
-                <i class="fa fa-chevron-left"></i> 【Go】笔记二 | 命令源码文件与命令行参数
+              <a href="/2018/09/02/【Go】笔记五-container包中的list与ring/" rel="next" title="【Go】笔记五 | container包中的list与ring">
+                <i class="fa fa-chevron-left"></i> 【Go】笔记五 | container包中的list与ring
               </a>
             
           </div>
@@ -511,10 +536,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/15/【架构】笔记三-模式与框架/" rel="prev" title="【架构】笔记三 | 模式与框架">
-                【架构】笔记三 | 模式与框架 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -694,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#核心知识"><span class="nav-number">1.</span> <span class="nav-text">核心知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#程序实体是什么？"><span class="nav-number">2.</span> <span class="nav-text">程序实体是什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#代码包声明的基本规则"><span class="nav-number">3.</span> <span class="nav-text">代码包声明的基本规则</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么样的程序实体才可以被当前包外的代码引用？"><span class="nav-number">4.</span> <span class="nav-text">什么样的程序实体才可以被当前包外的代码引用？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#对于程序实体，还可以使用怎样的访问权限规则？"><span class="nav-number">5.</span> <span class="nav-text">对于程序实体，还可以使用怎样的访问权限规则？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#额外知识"><span class="nav-number">6.</span> <span class="nav-text">额外知识</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep-lib-flag和flag，那么会产生冲突吗？"><span class="nav-number">6.1.</span> <span class="nav-text">如果需要导入两个代码包，而这两个代码包的导入路径的最后一级是相同的，比如：dep/lib/flag和flag，那么会产生冲突吗？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果会产生冲突，那么怎样解决这种冲突，有几种方式？"><span class="nav-number">6.2.</span> <span class="nav-text">如果会产生冲突，那么怎样解决这种冲突，有几种方式？</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#小结"><span class="nav-number">7.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#对通道的发送和接收操作都有哪些基本的特性？"><span class="nav-number">1.</span> <span class="nav-text">对通道的发送和接收操作都有哪些基本的特性？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发送操作和接收操作在什么时候可能被长时间的阻塞？"><span class="nav-number">2.</span> <span class="nav-text">发送操作和接收操作在什么时候可能被长时间的阻塞？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#发送操作和接收操作在什么时候会引发-panic？"><span class="nav-number">3.</span> <span class="nav-text">发送操作和接收操作在什么时候会引发 panic？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通道的长度代表着什么？它在什么时候会和通道的容量相同？"><span class="nav-number">4.</span> <span class="nav-text">通道的长度代表着什么？它在什么时候会和通道的容量相同？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是单向通道？"><span class="nav-number">5.</span> <span class="nav-text">什么是单向通道？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单向通道的用途究竟在哪儿呢？"><span class="nav-number">6.</span> <span class="nav-text">单向通道的用途究竟在哪儿呢？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#select语句与通道怎样联用，应该注意些什么？"><span class="nav-number">7.</span> <span class="nav-text">select语句与通道怎样联用，应该注意些什么？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#select语句的分支选择规则都有哪些？"><span class="nav-number">8.</span> <span class="nav-text">select语句的分支选择规则都有哪些？</span></a></li></ol></div>
             
 
           </div>
