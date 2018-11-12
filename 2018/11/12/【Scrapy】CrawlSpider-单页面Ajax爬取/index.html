@@ -66,7 +66,7 @@
 
 
 
-  <meta name="keywords" content="Python," />
+  <meta name="keywords" content="Scrapy," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="了解sort与sorted的排序">
-<meta name="keywords" content="Python">
+<meta name="description" content="项目目标爬取拉勾网职位列表基本信息+职位描述">
+<meta name="keywords" content="Scrapy">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Python sort与sorted">
-<meta property="og:url" content="http://blog.golanger.info/2018/11/06/Python sort与sorted/index.html">
+<meta property="og:title" content="【Scrapy】CrawlSpider 单页面Ajax爬取">
+<meta property="og:url" content="http://blog.golanger.info/2018/11/12/【Scrapy】CrawlSpider-单页面Ajax爬取/index.html">
 <meta property="og:site_name" content="The program life">
-<meta property="og:description" content="了解sort与sorted的排序">
+<meta property="og:description" content="项目目标爬取拉勾网职位列表基本信息+职位描述">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-09T07:53:12.000Z">
+<meta property="og:updated_time" content="2018-11-12T03:49:44.117Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Python sort与sorted">
-<meta name="twitter:description" content="了解sort与sorted的排序">
+<meta name="twitter:title" content="【Scrapy】CrawlSpider 单页面Ajax爬取">
+<meta name="twitter:description" content="项目目标爬取拉勾网职位列表基本信息+职位描述">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://blog.golanger.info/2018/11/06/Python sort与sorted/"/>
+  <link rel="canonical" href="http://blog.golanger.info/2018/11/12/【Scrapy】CrawlSpider-单页面Ajax爬取/"/>
 
 
 
 
 
-  <title>Python sort与sorted | The program life</title>
+  <title>【Scrapy】CrawlSpider 单页面Ajax爬取 | The program life</title>
   
 
 
@@ -326,7 +326,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://blog.golanger.info/2018/11/06/Python sort与sorted/">
+    <link itemprop="mainEntityOfPage" href="http://blog.golanger.info/2018/11/12/【Scrapy】CrawlSpider-单页面Ajax爬取/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="淡然">
@@ -343,7 +343,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Python sort与sorted</h1>
+          <h1 class="post-title" itemprop="name headline">【Scrapy】CrawlSpider 单页面Ajax爬取</h1>
         
 
         <div class="post-meta">
@@ -355,8 +355,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-06T13:25:27+08:00">
-                2018-11-06
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-12T11:46:03+08:00">
+                2018-11-12
               </time>
             
 
@@ -378,8 +378,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/Scrapy/" itemprop="url" rel="index">
+                    <span itemprop="name">Scrapy</span>
                   </a>
                 </span>
 
@@ -396,8 +396,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/11/06/Python sort与sorted/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/06/Python sort与sorted/" itemprop="commentCount"></span>
+                <a href="/2018/11/12/【Scrapy】CrawlSpider-单页面Ajax爬取/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/11/12/【Scrapy】CrawlSpider-单页面Ajax爬取/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -405,7 +405,7 @@
 
           
           
-             <span id="/2018/11/06/Python sort与sorted/" class="leancloud_visitors" data-flag-title="Python sort与sorted">
+             <span id="/2018/11/12/【Scrapy】CrawlSpider-单页面Ajax爬取/" class="leancloud_visitors" data-flag-title="【Scrapy】CrawlSpider 单页面Ajax爬取">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -436,30 +436,31 @@
       
 
       
-        <p>了解sort与sorted的排序<br><a id="more"></a></p>
-<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p><strong>sort语法：</strong><br>python2:<br>iterable.sort(cmp[, key[, reverse]])<br>python3:<br>iterable.sort(<em>, key=None, reverse=False)<br><strong>sorted 语法：</strong><br>python2:<br>sorted(iterable[, cmp[, key[, reverse]]])<br>python3:<br>sorted(iterable, </em>, key=None, reverse=False)</p>
-<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h2><p><strong>iterable</strong> – 可迭代对象。<br><strong>cmp</strong>(python3中已经取消) – 比较的函数，这个具有两个参数，参数的值都是从可迭代对象中取出，此函数必须遵守的规则为，大于则返回1，小于则返回-1，等于则返回0。<br><strong>key</strong> – 主要是用来进行比较的元素，只有一个参数，具体的函数的参数就是取自于可迭代对象中，指定可迭代对象中的一个元素来进行排序。在对一些字符串排序时，可以用key=str.lower来忽略大小写的排序，或者是用key=len进行基于字符串长度的排序。<br><strong>reverse</strong>–排序规则. reverse = True 或者 reverse = False(默认)。<br>（cmp和key可以使用lambda表达式）</p>
-<h2 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h2><p>sort是成员函数，sorted是built-in内建函数（被解释器所调用）<br>sort 是应用在 list 上的方法，sorted 可以对所有可迭代的对象进行排序操作。<br>list 的 sort 方法返回的是对已经存在的列表进行操作，而内建函数 sorted 方法返回的是一个新的 list，而不是在原来的基础上进行的操作</p>
-<p><strong>注意</strong>：<br>在Python3版本中，sort和sorted已经取消了cmp，也就是说安装原先的方法已经无法满足根据两个参数的比较来排序的需求，<br>但可以使用cmp_to_key</p>
-<p><strong>例1：</strong></p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; students = [(<span class="string">'danny'</span>, <span class="string">'male'</span>, <span class="number">15</span>), (<span class="string">'Tom'</span>, <span class="string">'male'</span>, <span class="number">12</span>), (<span class="string">'Jerry'</span>,<span class="string">'female'</span>, <span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; sorted(students,key=lambda <span class="symbol">s:</span> s[<span class="number">2</span>]) <span class="comment">#按照年龄来排序</span></span><br><span class="line">[(<span class="string">'Jerry'</span>, <span class="string">'female'</span>, <span class="number">10</span>), (<span class="string">'Tom'</span>, <span class="string">'male'</span>, <span class="number">12</span>), (<span class="string">'danny'</span>, <span class="string">'male'</span>, <span class="number">15</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; students<span class="comment">#使用sorted，原来的列表没有变化</span></span><br><span class="line">[(<span class="string">'danny'</span>, <span class="string">'male'</span>, <span class="number">15</span>), (<span class="string">'Tom'</span>, <span class="string">'male'</span>, <span class="number">12</span>), (<span class="string">'Jerry'</span>, <span class="string">'female'</span>, <span class="number">10</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; students.sort(key=lambda <span class="symbol">s:</span> s[<span class="number">2</span>])</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; students<span class="comment">#使用了元素的函数sort自身发生了改变</span></span><br><span class="line">[(<span class="string">'Jerry'</span>, <span class="string">'female'</span>, <span class="number">10</span>), (<span class="string">'Tom'</span>, <span class="string">'male'</span>, <span class="number">12</span>), (<span class="string">'danny'</span>, <span class="string">'male'</span>, <span class="number">15</span>)]</span><br></pre></td></tr></table></figure>
-<p><strong>例2：</strong><br>字符串排序，排序规则：小写-大写-奇数-偶数</p>
-<figure class="highlight llvm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = 'asdf<span class="number">234</span>GDSdsf<span class="number">23</span>'</span><br><span class="line">&gt;&gt;&gt; print(<span class="string">""</span>.join(sorted(s, key=lambda <span class="keyword">x</span>: (<span class="keyword">x</span>.isdigit(),<span class="keyword">x</span>.isdigit() <span class="keyword">and</span> int(<span class="keyword">x</span>) <span class="symbol">%2</span> == <span class="number">0</span>,<span class="keyword">x</span>.isupper(),<span class="keyword">x</span>))))</span><br><span class="line">addffssDGS<span class="number">33224</span></span><br></pre></td></tr></table></figure>
-<p>1.x.isdigit()检测字符串是否只由数字组成，排序把数字放在右边,字母放在左边.<br>2.x.isdigit() and int(x) % 2 == 0的作用是保证奇数在右，偶数在左。<br>3.x.isupper()的作用是在前面基础上,保证字母小写在右大写在左.<br>4.最后的x表示在前面基础上,对所有类别数字或字母排序。<br><strong>例3：</strong><br>要求1.正数在前负数在后 2.整数从小到大 3.负数从大到小</p>
-<figure class="highlight subunit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; list_a=[7, <span class="string">-8</span>, 5, 4, 0, <span class="string">-2</span>, <span class="string">-5</span>]</span><br><span class="line">&gt;&gt;&gt; sorted(list_a,key=lambda x:(x&lt;0,abs(x)))</span><br><span class="line">[0, 4, 5, 7, <span class="string">-2</span>, <span class="string">-5</span>, <span class="string">-8</span>]</span><br><span class="line">&gt;&gt;&gt; list_a</span><br><span class="line">[7, <span class="string">-8</span>, 5, 4, 0, <span class="string">-2</span>, <span class="string">-5</span>]</span><br><span class="line">&gt;&gt;&gt; list_a.sort(key=lambda x:(x&lt;0,abs(x)))</span><br><span class="line">&gt;&gt;&gt; list_a</span><br><span class="line">[0, 4, 5, 7, <span class="string">-2</span>, <span class="string">-5</span>, <span class="string">-8</span>]</span><br></pre></td></tr></table></figure>
-<p>先按照正负排先后，再按照大小排先后。</p>
-<p><strong>例子4使用cmp：</strong><br>来源牛客网<br>编程题目原地址</p>
-<p><a href="https://www.nowcoder.com/practice/a6a656249f404eb498d16b2f8eaa2c60?tpId=85&amp;&amp;tqId=29898&amp;rp=1&amp;ru=/activity/oj&amp;qru=/ta/2017test/question-ranking" target="_blank" rel="noopener">https://www.nowcoder.com/practice/a6a656249f404eb498d16b2f8eaa2c60?tpId=85&amp;&amp;tqId=29898&amp;rp=1&amp;ru=/activity/oj&amp;qru=/ta/2017test/question-ranking</a></p>
-<p>题目内容如下</p>
-<p>设有n个正整数，将他们连接成一排，组成一个最大的多位整数。<br>如:n=3时，3个整数13,312,343,连成的最大整数为34331213。<br>如:n=4时,4个整数7,13,4,246连接成的最大整数为7424613。<br>输入描述:<br>有多组测试样例，每组测试样例包含两行，第一行为一个整数N（N&lt;=100），第二行包含N个数(每个数不超过1000，空格分开)。<br>输出描述:<br>每组数据输出一个表示最大的整数。<br>示例1<br><strong>输入</strong></p>
-<p>2<br>12 123<br>4<br>7 13 4 246<br><strong>输出</strong></p>
-<p>12312<br>7424613</p>
-<p><strong>python2：</strong></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">def cmp(<span class="keyword">a</span>, <span class="keyword">b</span>):  </span><br><span class="line">    <span class="keyword">ab</span> = <span class="keyword">int</span>(<span class="keyword">a</span>+<span class="keyword">b</span>)  </span><br><span class="line">    <span class="keyword">ba</span> = <span class="keyword">int</span>(<span class="keyword">b</span>+<span class="keyword">a</span>)  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">ab</span> &gt; <span class="keyword">ba</span> <span class="keyword">else</span> -<span class="number">1</span>  </span><br><span class="line">num = <span class="built_in">input</span>()  </span><br><span class="line"><span class="keyword">l</span>=raw_input().<span class="keyword">split</span>(<span class="string">' '</span>)  </span><br><span class="line"><span class="keyword">l</span>.<span class="keyword">sort</span>(cmp, <span class="built_in">reverse</span>=True)  </span><br><span class="line"><span class="keyword">print</span> <span class="keyword">int</span>(<span class="string">''</span>.<span class="keyword">join</span>(<span class="keyword">l</span>))</span><br></pre></td></tr></table></figure>
-<p><strong>python3：</strong></p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">from functools import cmp_to_key #导入使用cmp_to_key</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">def cmp(<span class="keyword">a</span>, <span class="keyword">b</span>):  </span><br><span class="line">    <span class="keyword">ab</span> = <span class="keyword">int</span>(<span class="keyword">a</span>+<span class="keyword">b</span>)  </span><br><span class="line">    <span class="keyword">ba</span> = <span class="keyword">int</span>(<span class="keyword">b</span>+<span class="keyword">a</span>)  </span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span> <span class="keyword">if</span> <span class="keyword">ab</span> &gt; <span class="keyword">ba</span> <span class="keyword">else</span> -<span class="number">1</span>  </span><br><span class="line">num = <span class="built_in">input</span>()  </span><br><span class="line"><span class="keyword">l</span>=<span class="built_in">input</span>().<span class="keyword">split</span>(<span class="string">' '</span>)  #python3中把python2的row_input(str)和iuput(<span class="keyword">int</span>)结合到inptu(str)一起</span><br><span class="line"><span class="keyword">l</span>.<span class="keyword">sort</span>(key=cmp_to_key(cmp), <span class="built_in">reverse</span>=True)  </span><br><span class="line"><span class="keyword">print</span>(<span class="keyword">int</span>(<span class="string">''</span>.<span class="keyword">join</span>(<span class="keyword">l</span>)))</span><br></pre></td></tr></table></figure>
-<p>python3中sort和sorted取消了对cmp的支持，并且key接受一个函数，这个函数只接受一个元素，而当需要两个元素来进行比较时可以使用functools.cmp_to_key。</p>
-<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>key 和 reverse 比一个等价的 cmp 函数处理速度要快。这是因为对于每个列表元素，cmp 都会被调用多次，而 key 和 reverse 只被调用一次<br>可选参数key还可以在内置函数min()和max()中起作用。</p>
+        <h1 id="项目目标"><a href="#项目目标" class="headerlink" title="项目目标"></a>项目目标</h1><p>爬取拉勾网职位列表基本信息+职位描述<br><a id="more"></a></p>
+<h1 id="项目思考"><a href="#项目思考" class="headerlink" title="项目思考"></a>项目思考</h1><p>拉勾网的招聘岗位列表，这是Ajax异步加载的。</p>
+<p>我想把岗位列表所显示的信息爬取下来，同时还需要岗位的工作详情。</p>
+<p>爬取流程就是一开始就不断获取职位列表的json，然后从json中提取对应的职位详情页，再进去爬取其职位描述。</p>
+<p>使用Scrapy的scrapy.Spider基础爬虫模板很简单就可以实现，直接重载编写parse方法，再加上个回调方法就可以。</p>
+<p>但如何<strong>使用CrawlSpider做到类似的功能？</strong></p>
+<p>对于获取json的网址，rules规则没什么用，而CrawlSpider中的parse是不能被重载的。</p>
+<ol>
+<li><p>第一步，重写start_request():</p>
+<p>crawlspider继承基类是spider，所以它的开始入口也是start_request(),然后默认回调parse。注意回调parse这个不能改。</p>
+</li>
+<li><p>第二步，重写parse_start_url()</p>
+<p><strong>start_request()-&gt;parse()-&gt;_parse_response()-&gt;parse_start_url()</strong></p>
+<p>如果设置了callback就会调用parse_start_url()方法，rules中的回调。</p>
+<p>因为rules在本次项目中没有作用，所以我们需要重载parse_start_url()作为我们的回调方法。</p>
+<p>在parse_start_url()中，需要获取职位的详情页，发起request，设置回调方法。<br>不断发起下一页的职位列表请求。</p>
+</li>
+<li><p>第三步，编写解析职位描述的detail_parse()</p>
+<p>注意的时，这里最后在parse_start_url()中使用response.meta传递item到detail_parse()来进行数据保存。</p>
+<p>因为如果在parse_start_url()就把职位列表的信息保存下来的话，因为Scrapy程序调度的关系，在插入数据库的时候，item中的数据不一定同步，插入数据库会报一些错。</p>
+</li>
+<li><p>注意request要带上有cookie的header，不然会被重定向到login页面</p>
+</li>
+</ol>
+<h1 id="项目代码"><a href="#项目代码" class="headerlink" title="项目代码"></a>项目代码</h1><figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"># -*- coding: utf<span class="number">-8</span> -*-</span><br><span class="line">import json</span><br><span class="line">import random</span><br><span class="line">import time</span><br><span class="line">from datetime import datetime</span><br><span class="line"></span><br><span class="line">import scrapy</span><br><span class="line">from scrapy import <span class="symbol">FormRequest</span></span><br><span class="line">from scrapy.spiders import <span class="symbol">CrawlSpider</span>, <span class="symbol">Rule</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">from utils.common import get_md5</span><br><span class="line">from items import <span class="symbol">LagouJobItemLoader</span>, <span class="symbol">LagouItem</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">class <span class="symbol">LagouSpider</span>(<span class="symbol">CrawlSpider</span>):</span><br><span class="line">    name = <span class="string">'lagou'</span></span><br><span class="line">    allowed_domains = [<span class="string">'www.lagou.com'</span>]</span><br><span class="line">    start_urls = [<span class="string">'https://www.lagou.com/jobs/positionAjax.json?'</span>]</span><br><span class="line"></span><br><span class="line">    headers = &#123;</span><br><span class="line">        <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.77 Safari/537.36'</span>,</span><br><span class="line">        <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded; set=UTF-8'</span>,</span><br><span class="line">        <span class="string">'Cookie'</span>: <span class="string">'JSESSIONID=ABAAABAAAGFABEF2A9F526EEAF8A4D5979C9C91C470D916; user_trace_token=20181108222228-77038827-4d01-4f91-8b3a-55a0cccaf9d6; Hm_lvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1541686949; _ga=GA1.2.1567223367.1541686949; _gid=GA1.2.489493353.1541686949; LGUID=20181108222230-b9c05f9e-e361-11e8-9314-525400f775ce; TG-TRACK-CODE=search_code; Hm_lpvt_4233e74dff0ae5bd0a3d81c6ccf756e6=1541777035; LGRID=20181109232414-8446b9ff-e433-11e8-94aa-525400f775ce; SEARCH_ID=e89119713fd54563ad1b598a8c7e631a'</span>,</span><br><span class="line">        <span class="string">'Referer'</span>: <span class="string">'https://www.lagou.com/jobs/list_Python?labelWords=&amp;fromSearch=true&amp;suginput=1'</span>,</span><br><span class="line">        <span class="string">'Host'</span>: <span class="string">'www.lagou.com'</span>,</span><br><span class="line">        <span class="string">'Origin'</span>: <span class="string">'https: // www.lagou.com'</span>,</span><br><span class="line">        <span class="string">'X-Anit-Forge-Code'</span>: <span class="number">0</span>,</span><br><span class="line">        <span class="string">'X-Anit-Forge-Token'</span>: <span class="symbol">None</span>,</span><br><span class="line">        <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    page = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    def start_requests(self):</span><br><span class="line">        for url in self.start_urls:</span><br><span class="line">            yield <span class="symbol">FormRequest</span>(url, headers=self.headers,</span><br><span class="line">                              formdata=&#123;</span><br><span class="line">                                  <span class="string">'first'</span>: <span class="string">'true'</span>,</span><br><span class="line">                                  <span class="string">'pn'</span>: str(self.page),</span><br><span class="line">                                  <span class="string">'kd'</span>: <span class="string">'Python'</span>,</span><br><span class="line">                                  <span class="string">'city'</span>: <span class="string">'深圳'</span></span><br><span class="line"></span><br><span class="line">                              &#125;, callback=self.parse,</span><br><span class="line">                              dont_filter=<span class="symbol">True</span></span><br><span class="line">                              )</span><br><span class="line"></span><br><span class="line">    def parse_start_url(self, response):</span><br><span class="line"></span><br><span class="line">        data = json.loads(response.body.decode(<span class="string">'utf-8'</span>))</span><br><span class="line">        result = data[<span class="string">'content'</span>][<span class="string">'positionResult'</span>][<span class="string">'result'</span>]</span><br><span class="line">        totalCount = data[<span class="string">'content'</span>][<span class="string">'positionResult'</span>][<span class="string">'totalCount'</span>]</span><br><span class="line">        resultSize = data[<span class="string">'content'</span>][<span class="string">'positionResult'</span>][<span class="string">'resultSize'</span>]</span><br><span class="line"></span><br><span class="line">        for each in result:</span><br><span class="line">            item = <span class="symbol">LagouItem</span>()</span><br><span class="line">            item[<span class="string">'url'</span>] = <span class="string">'https://www.lagou.com/jobs/&#123;&#125;.html'</span>.format(each[<span class="string">'positionId'</span>])</span><br><span class="line">            res = scrapy.<span class="symbol">Request</span>(url=item[<span class="string">'url'</span>], headers=self.headers, callback=self.detail_parse)</span><br><span class="line">            res.meta[<span class="string">'item'</span>] = item</span><br><span class="line">            res.meta[<span class="string">'each'</span>] = each</span><br><span class="line">            yield res</span><br><span class="line"></span><br><span class="line">            time.sleep(<span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line">        time.sleep(random.randint(<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line"></span><br><span class="line">        if int(resultSize):</span><br><span class="line">            self.allpage = int(totalCount) / int(resultSize) + <span class="number">1</span></span><br><span class="line">            if self.page &lt; self.allpage:</span><br><span class="line">                self.page += <span class="number">1</span></span><br><span class="line">                yield <span class="symbol">FormRequest</span>(self.start_urls[<span class="number">0</span>], headers=self.headers,</span><br><span class="line">                                  formdata=&#123;</span><br><span class="line">                                      <span class="string">'first'</span>: <span class="string">'false'</span>,</span><br><span class="line">                                      <span class="string">'pn'</span>: str(self.page),</span><br><span class="line">                                      <span class="string">'kd'</span>: <span class="string">'Python'</span>,</span><br><span class="line">                                      <span class="string">'city'</span>: <span class="string">'深圳'</span></span><br><span class="line">                                  &#125;, callback=self.parse</span><br><span class="line">                                  )</span><br><span class="line"></span><br><span class="line">    def detail_parse(self, response):</span><br><span class="line"></span><br><span class="line">        item = response.meta[<span class="string">'item'</span>]</span><br><span class="line">        des = response.css(<span class="string">'.job_bt div p::text'</span>).extract()</span><br><span class="line">        item[<span class="string">'description'</span>] = <span class="string">","</span>.join(des)</span><br><span class="line"></span><br><span class="line">        each = response.meta[<span class="string">'each'</span>]</span><br><span class="line">        item[<span class="string">'url_obj_id'</span>] = get_md5(item[<span class="string">'url'</span>])</span><br><span class="line">        item[<span class="string">'city'</span>] = each[<span class="string">'city'</span>]</span><br><span class="line">        item[<span class="string">'company_full_name'</span>] = each[<span class="string">'companyFullName'</span>]</span><br><span class="line">        item[<span class="string">'company_size'</span>] = each[<span class="string">'companySize'</span>]</span><br><span class="line">        item[<span class="string">'district'</span>] = each[<span class="string">'district'</span>]</span><br><span class="line">        item[<span class="string">'education'</span>] = each[<span class="string">'education'</span>]</span><br><span class="line">        item[<span class="string">'linestaion'</span>] = each[<span class="string">'linestaion'</span>]</span><br><span class="line">        item[<span class="string">'position_name'</span>] = each[<span class="string">'positionName'</span>]</span><br><span class="line">        item[<span class="string">'job_nature'</span>] = each[<span class="string">'jobNature'</span>]</span><br><span class="line">        item[<span class="string">'salary'</span>] = each[<span class="string">'salary'</span>]</span><br><span class="line">        item[<span class="string">'create_time'</span>] = each[<span class="string">'createTime'</span>]</span><br><span class="line">        item[<span class="string">'work_year'</span>] = each[<span class="string">'workYear'</span>]</span><br><span class="line">        item[<span class="string">"crawl_time"</span>] = datetime.now()</span><br><span class="line"></span><br><span class="line">        yield item</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -477,7 +478,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"><i class="fa fa-tag"></i> Python</a>
+            <a href="/tags/Scrapy/" rel="tag"><i class="fa fa-tag"></i> Scrapy</a>
           
         </div>
       
@@ -490,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/01/【Python】classmethod-在实际项目中的应用/" rel="next" title="@classmethod 在实际项目中的应用">
-                <i class="fa fa-chevron-left"></i> @classmethod 在实际项目中的应用
+              <a href="/2018/11/06/【Python】 sort与sorted/" rel="next" title="【Python】 sort与sorted">
+                <i class="fa fa-chevron-left"></i> 【Python】 sort与sorted
               </a>
             
           </div>
@@ -582,7 +583,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -593,7 +594,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -604,7 +605,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -678,7 +679,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参数"><span class="nav-number">2.</span> <span class="nav-text">参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区别"><span class="nav-number">3.</span> <span class="nav-text">区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">4.</span> <span class="nav-text">后记</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#项目目标"><span class="nav-number">1.</span> <span class="nav-text">项目目标</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目思考"><span class="nav-number">2.</span> <span class="nav-text">项目思考</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#项目代码"><span class="nav-number">3.</span> <span class="nav-text">项目代码</span></a></li></ol></div>
             
 
           </div>
@@ -731,7 +732,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共30.3k字</span>
+  <span class="post-count">博客全站共31.2k字</span>
 </div>
 
         
